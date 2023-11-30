@@ -1,0 +1,494 @@
+/*CSS của trang kết quả tìm kiếm*/
+.selling-show-search{
+    width: 100%;
+    position: absolute; top: 0; left: 0;
+    background-color: rgb(222, 225, 230);
+    padding: 30px 0px;
+   
+}
+.selling-show-search h1{
+    text-align: center;
+    padding: 40px;
+}
+
+.container-search-products{
+    background-color: white; 
+    width: 85%;  
+    border-radius: 5px;
+    margin: auto;
+}
+.detail div{
+    margin: 0px 15px;
+    line-height: 20px;
+}
+.detail .price{
+    margin-left: 8%;
+    margin-bottom: 15px;
+}
+
+/*CSS trang chính*/
+.selling-show{
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+}
+
+.selling-products {
+    width: 98%;
+    position: relative; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-selling-products{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+#item-show {
+    border: 1px solid rgb(222, 225, 230);
+    width: 19%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;  
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
+    overflow: hidden;
+}
+
+
+#item-show img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;   
+    transition: transform 1.6s ease;
+}
+#item-show img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.border-title-selling{
+    width: 100% ;
+    height: 70px;
+   
+    
+}
+
+.title-selling{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+}
+.title-divider {
+    border-left: 1px solid black; /* Thêm dấu gạch dọc */
+    height: 20px; /* Đặt chiều cao của dấu gạch */
+    margin: 20px -20px; /* Tùy chỉnh khoảng cách giữa dấu gạch và nội dung */
+}
+.fa-truck{
+    transform: scaleX(-1);
+}
+
+.mienphi-giaohang i {
+    margin-left: 355px;
+    margin-top: 1187px;
+    color: red;
+    font-size: 20px;    /* Tùy chỉnh kích thước của biểu tượng */
+}
+
+.laptop-banchay p{
+    margin-left: 35px;
+    margin-top: 15px;
+    font-size: 23px;
+}
+.laptop-banchay a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.laptop-banchay a:hover{
+    color: red;
+}
+.mienphi-giaohang p{
+    margin-top: 17px;
+    margin-left: 70px;
+    font-size: 20px;
+}
+.laptop-banchay{
+    width: 20%;
+    height: 70px;
+}
+.mienphi-giaohang{
+    width: 30%;
+    height: 70px;
+}
+.list-tenhang p{
+    font-size: 17px;
+    color: black;
+    margin-top: 17px;
+    margin-left: 30px;
+    position: relative; /* Đặt vị trí tương đối để có thể sử dụng phần tử pseudo */
+}
+.list-tenhang{
+    width: 50%;
+    height: 70px;
+    display: flex;
+    margin-left: 100px;
+}
+.list-tenhang p::after {
+    content: ''; /* Thêm nội dung trống cho phần tử pseudo */
+    position: absolute; /* Đặt vị trí tuyệt đối để căn chỉnh */
+    left: 0; /* Đặt vị trí bên trái */
+    bottom: 0; /* Đặt vị trí bên dưới */
+    width: 100%; /* Đặt chiều rộng 100% để che toàn bộ văn bản */
+    height: 1.5px; /* Đặt chiều cao của dấu gạch */
+    background-color: #000; /* Màu của dấu gạch */
+    transform: scaleX(0); /* Bắt đầu với chiều rộng bằng 0 */
+    transform-origin: 0% 100%; /* Đặt điểm xoay ở góc dưới bên trái */
+    transition: transform 0.3s ease; /* Tạo hiệu ứng transition cho transform */
+}
+.list-tenhang p:hover{
+    color: red;
+}
+.list-tenhang p:hover::after {
+    transform: scaleX(1); /* Mở rộng chiều rộng khi di chuột vào */
+}
+
+.list-tenhang a {
+    text-decoration: none;
+}
+
+.technical{
+    background: #ECECEC;
+    border-radius: 4px;
+    color: #6D6E72;
+    font-size: 12px;
+    padding: 5px 8px;
+    margin-bottom: 8px;
+    margin-left: 19px;
+    padding-left: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+.name-product{
+    margin-bottom: 10px;
+}
+.name-product a{
+    text-decoration: none;
+    color: #000;
+}
+.price del {
+    font-size: 13px;
+    font-weight: bold;
+    color:#6D6E72; ;
+}
+.price--default{
+    display: flex;
+    align-items: center;
+}
+.price--highlight{
+    font-weight: bold;
+    color: red;
+}
+.label--on-sale{
+    padding: 0 4px;
+    background: #FFEDED;
+    border-radius: 2px;
+    color: #E30019;
+    border: 1px solid #E30019;
+    line-height: 16px;
+    font-size: 13px;
+    margin-left: 10px;
+    
+}
+.detial {
+    margin: 10px;
+    padding: 5px;
+    width: 100%;
+    font-family: "SF Pro Display", 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+.detail .name-product{
+    align-items: center;
+    text-align: center;
+}
+
+/*CSS nút chuyển trang*/
+#pagenumber {
+    background-color: gray;
+    width: 100%;
+    border: #996600 solid 2px;
+    height: 45px;
+    display: inline-table;
+    
+}
+.pagination-btn {
+    display: flex;
+    height: 40px;
+    padding: 8px;
+    margin: 4px;
+    cursor: pointer;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    background-color: whitesmoke;
+    text-align: center;
+    width: 100%;
+}
+
+.pagination-btn.active {
+    background-color: wheat; /* Change this to your desired color */
+    color: white;
+}
+.pagination-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: whitesmoke;
+}
+
+.pagination-btn.active {
+    background-color: wheat; /* Change this to your desired color */
+    color: white;
+}
+
+/*CSS lọc sản phẩm*/
+.filterproducts{
+    width: 85%;
+    background-color: #66ccff8f;
+    margin: auto;
+    margin-top: 35px;
+}
+.container-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+.container-filter .title{
+    width: 20%;
+    height: 35px;
+    list-style: none;
+    margin: 10px 10px;
+    border: 1px solid rgb(222, 225, 230);
+}
+.container-filter .title p{
+    margin: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.filterproducts .container-filter .title .item-checkbox :after{
+    content: "+";
+    font-size: 20px;
+}
+/*CSS cho ô bên trong filter*/
+.group-filter{
+    position: absolute;
+    width: 14%;
+    z-index: 99;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0;
+    display: none;
+    border-top: 0;
+    padding: 10px;
+    box-shadow: 0 3px 6px -2px #888;
+    transition: 0.3s ease-in-out;
+}
+li label{
+    display: flex;    /*CSS cho danh sách bên trong nút lọc*/
+}
+.listcheckbox{
+    display: contents;
+}
+.group-filter .layer-content .listcheckbox li , label{
+    list-style: none;
+    margin: 12px 0px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/*CSS cho div gaming */
+.selling-show-gaming{
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+}
+
+.selling-products-gaming {
+    width: 98%;
+    position: relative; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-selling-products-gaming{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.item-show-gaming {
+    border: 1px solid rgb(222, 225, 230);
+    width: 19%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;  
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
+    overflow: hidden;
+}
+
+
+.item-show-gaming img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;   
+    transition: transform 1.6s ease;
+}
+.item-show-gaming img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+/*CSS cho div doanh nhan*/
+.selling-show-doanhnhan{
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+}
+
+.selling-products-doanhnhan {
+    width: 98%;
+    position: relative; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-selling-products-doanhnhan{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.item-show-doanhnhan {
+    border: 1px solid rgb(222, 225, 230);
+    width: 19%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;  
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
+    overflow: hidden;
+}
+
+
+.item-show-doanhnhan img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;   
+    transition: transform 1.6s ease;
+}
+.item-show-doanhnhan img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+/*CSS cho div Đồ họa */
+.selling-show-dohoa{
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+}
+
+.selling-products-dohoa {
+    width: 98%;
+    position: relative; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-selling-products-dohoa{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.item-show-dohoa {
+    border: 1px solid rgb(222, 225, 230);
+    width: 19%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;  
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
+    overflow: hidden;
+}
+
+
+.item-show-dohoa img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;   
+    transition: transform 1.6s ease;
+}
+.item-show-dohoa img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+#filter-result{
+    font-size: 25px;
+    padding: 20px;
+    font-weight: 600;
+}
+#message{
+    width: 85%;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    margin-left: 7.5%;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+#total-products-message{
+    background-color: #0000FF;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+}

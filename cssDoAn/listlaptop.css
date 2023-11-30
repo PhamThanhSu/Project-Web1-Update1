@@ -1,0 +1,42 @@
+#list-laptop{
+    display: none;
+    width: 100%;
+    height: 352px; 
+    margin-left: 0px; 
+    margin-top: -2px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; /* Ẩn phần ảnh bị vượt ra khỏi khung */
+    background-color:  wheat;
+    overflow: auto;
+}
+
+.menulaptop-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
+}
+#list-laptop .menulaptop-content .sub-megamenu-item{
+    width: 20%;
+    padding: 5px 23px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#list-laptop .menulaptop-content .sub-megamenu-item .sub-megamenu-item-name{
+    color: #E30019;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+    margin-right: auto;
+    font-family: 'SF Pro Display', 'Arial', sans-serif; 
+}
+#list-laptop .menulaptop-content .sub-megamenu-item .sub-megamenu-item-filter{
+    text-decoration: none;
+    line-height: 1.8;
+    color: black;
+    margin-right: auto;
+}
