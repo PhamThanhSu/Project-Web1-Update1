@@ -1,0 +1,38 @@
+.item-banner-bottom{
+    width: 85%;
+    height: 230px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 120px;
+}
+.container{
+    margin-left: -10px;
+}
+.box-item-show{
+    width: 300px;
+    height: 200px;
+    margin-top: 15px;
+    margin-left: 10px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.box-item-show img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+
+}
+.box-item-show:hover img{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}

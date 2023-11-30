@@ -1,0 +1,47 @@
+.cotainer{
+    
+}
+#content{
+    margin-top: 15px;
+ }
+ .title{
+     font-size: 18px;
+     cursor: pointer;
+     overflow: hidden;
+     font-weight: bolder;
+     display: -webkit-box;
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+ }
+ .item .content .des div{
+     margin-top: 10px;
+     cursor: pointer;
+ }
+ .item .content .price{
+     cursor: pointer;
+ }
+ .price del {
+     font-size: 13px;
+     font-weight: bold;
+     color:#6D6E72;
+     margin-left: 10px;
+ }
+ .price--default{
+     display: flex;
+     align-items: center;
+     margin-top: 10px;
+     margin-bottom: 10px;
+ }
+ .price--highlight{
+     font-weight: bold;
+     color: red;
+ }
+ .label--on-sale{
+     padding: 0 4px;
+     background: red;
+     border-radius: 3px;
+     color:white;
+     border: 1px solid #E30019;
+     line-height: 16px;
+     font-size: 13px; 
+ }

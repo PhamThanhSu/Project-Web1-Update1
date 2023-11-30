@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaptopPro</title>
+    <script src="https://kit.fontawesome.com/ee40bf749e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../cssDoAn/list.css">
+    <link rel="stylesheet" href="../cssDoAn/topheader.css">
+    <link rel="stylesheet" href="../cssDoAn/bottomheader.css">
+    <link rel="stylesheet" href="../cssDoAn/show.css">
+    <link rel="stylesheet" href="../cssDoAn/home.css">
+    <link rel="stylesheet" href="../cssDoAn/itembannerbottom.css">
+    <link rel="stylesheet" href="../cssDoAn/sellingproducts.css">
+    <link rel="stylesheet" href="../cssDoAn/dangnhap_header.css">
+    <link rel="stylesheet" href="../cssDoAn/responsivelayout.css">
+    <link rel="stylesheet" href="../cssDoAn/cart_header.css">
+    <link rel="stylesheet" href="../cssDoAn/listlaptop.css">
+    <link rel="stylesheet" href="../cssDoAn/listncsd.css">
+    <link rel="stylesheet" href="../cssDoAn/listdaquasudung.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <style>
+        
+        .thongtin{
+    width: 25%;
+    color: white;
+}
+.thongtin div,li{
+    margin-top: 15px;
+}
+.thongtin li:hover{
+    cursor: pointer;
+    color: rgb(33, 150, 213);
+}
+.footer2{
+    width: 80%;
+    transform: translateX(12.5%);
+    display: flex; 
+}
+
+        
+        .hang{
+            display: flex;
+        }
+        .congdung{
+            font-size: 25px;
+            width: 40%;
+            height:60px ;
+            margin-top: 16px;
+            line-height: 60px;
+            font-weight: bolder;   
+        }
+        .nhan{
+            width: 60%;
+            list-style-type: none;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .nhan li{
+            width: 14%;
+            margin: 10px;
+            height: 35px;
+            display: inline-table;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nhan li:hover{
+            cursor: pointer;
+            background-color: rgb(55, 173, 194);
+        }
+        #container-gaming{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #list-gaming{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            
+        }
+        .listPage-gaming{
+            padding: 10px;
+            text-align: center;
+            list-style: none;
+           
+        }
+        .listPage-gaming li{
+            background-color: white;
+            padding: 15px;
+            display: inline-block;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .listPage-gaming .active{
+            background-color: aqua;
+            color: white;
+        }
+        #container-doanhnhan{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #list-doanhnhan {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+        }
+        .listPage-doanhnhan{
+            padding: 10px;
+            text-align: center;
+            list-style: none;
+           
+        }
+        .listPage-doanhnhan li{
+            background-color: white;
+            padding: 15px;
+            display: inline-block;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .listPage-doanhnhan .active{
+            background-color: aqua;
+            color: white;
+        }
+        #container-dohoa{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #list-dohoa{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+        }
+        .listPage-dohoa{
+            padding: 10px;
+            text-align: center;
+            list-style: none;
+           
+        }
+        .listPage-dohoa li{
+            background-color: white;
+            padding: 15px;
+            display: inline-block;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .listPage-dohoa .active{
+            background-color: aqua;
+            color: white;
+        }
+        #content{
+            margin-top: 15px;
+         }
+         .title{
+             font-size: 18px;
+             cursor: pointer;
+             overflow: hidden;
+             font-weight: bolder;
+             display: -webkit-box;
+             -webkit-line-clamp: 2;
+             -webkit-box-orient: vertical;
+         }
+         .itemproduct .content .des div{
+             margin-top: 10px;
+             cursor: pointer;
+         }
+         .itemproduct .content .price{
+             cursor: pointer;
+         }
+         .price del {
+             font-size: 13px;
+             font-weight: bold;
+             color:#6D6E72;
+             margin-left: 10px;
+         }
+         .price--default{
+             display: flex;
+             align-items: center;
+             margin-top: 10px;
+             margin-bottom: 10px;
+         }
+         .itemproduct{
+            width: 19%;
+            margin: 5px;
+            border: 1px solid rgb(222, 225, 230);
+            border-radius: 5px;
+         }
+         .map{
+    width: 6%;
+}
+.item{
+    width: 19%;
+    margin: 5px;
+    flex-direction: column;
+}
+#cpu{
+    margin-top: 10px; 
+    margin-left: 9px;
+    color: rgb(111, 111, 117);
+    display: flex;
+}
+#ram{
+    margin-top: 10px; 
+    margin-left: 10px;
+    color: rgb(111, 111, 117);
+    display: flex;
+}
+#ssd{
+    margin-top: 10px; 
+    margin-left: 10px;
+    color: rgb(111, 111, 117);
+    display: flex;
+}
+#vga{
+    margin-top: 10px; 
+    margin-left: 10px;
+    color: rgb(111, 111, 117);
+    display: flex;
+    margin-bottom: 10px;
+}
+.anh {
+    width:100%;
+    height:210px;
+    transition: width 0.3s ease;
+}
+    </style>
+</head>
+<body>
+    <div class="all" id="all" style="width: 100%; background-color: rgb(222, 225, 230); position: absolute; top: 0; left: 0; ">
+        <header>
+            <div class="top_header">
+                <div class="logo-header">
+                    <a href="../html/Trangchu_DoAn.html">
+                        <img width="240" height="80" src="../imageDoAn/logo-removebg-preview.png" alt="logo">
+                    </a>
+                </div>
+                <div class="search-desktop">
+                    <form class="search" onsubmit="return handleeFilterFileresult(this)">
+                        <div class="search-inner">
+                            <input class="search-input" id="search" type="text" placeholder="Bạn đang tìm gì..." aria-label="Search">
+                        </div>
+                        <button type="submit" id="btn-search" class="btn-search" aria-label="Tìm kiếm">
+                            <img width="30" height="30" src="../imageDoAn/icon-search.png" alt="Tìm kiếm">
+                        </button>
+                    </form>
+                </div>
+                <div class="menu_header">
+                    <ul class="list-menu-header">
+                        <li class="list-menu-header-item">
+                            <a class="icon_call" href="tel:0353022840" style="display: flex; align-items: center;">
+                                <span class="box-icon-topmenu" id="color-icon">								
+                                    <img width="24" height="24" src="https://file.hstatic.net/200000713019/file/phone-call_e079526c31434e4bb169132325cc2600.png" alt="Hotline">
+                                </span>
+                                <span class="box-text">
+                                    Hotline
+                                    <span class="small-text">0353022840</span>
+                                </span>        
+                            </a>
+                        </li>
+                        <li class="list-menu-header-item">
+                            <a class="icon_ggmap" href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank" style="display: flex; align-items: center;">
+                                <span class="box-icon-topmenu" id="color-icon">								
+                                    <img width="24" height="24" src="../imageDoAn/map.png" alt="Hệ thống">
+                                </span>
+                                <span class="box-text">
+                                    Hệ thống
+                                <span class="small-text">Showroom</span>
+                                </span>        
+                            </a>
+                        </li>
+                        <li class="list-menu-header-item">
+                            <a href="#" style="display: flex; align-items: center; width: 105px;">
+                                <span class="box-icon-topmenu" id="color-icon">								
+                                    <img width="24" height="24" src="../imageDoAn/donhang.png" alt="Đơn hàng">
+                                </span>
+                                <span class="box-text">
+                                    Tra cứu
+                                    <span class="small-text">đơn hàng</span>
+                                </span>   
+                            </a>     
+                        </li>
+                        <li class="list-menu-header-item">
+                            <div id="button-cart" style="display: flex; align-items: center; width: 100px;">
+                                <span class="box-icon-topmenu" id="color-icon"> 
+                                    <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
+                                </span>
+                                <span class="box-text">
+                                    Giỏ hàng
+                                <span class="small-text">Cart</span>
+                                </span> 
+                            </div>
+                        </li>
+                     <li class="list-menu-header-item">
+                                    <button type="submit" class="btn-login" id="button-login" style="width: 95px;">
+                                        <span  id="admin"  class="box-text"> <a href="../html/Layout admin.html">  Admin </span></a>
+                                        <span  id="dangxuat" class="box-text" onclick="logout()">   Đăng xuất</span>
+                                        <span  id="dangnhap" class="box-text"> <a href="../html/8Lap_Login.html"> Đăng nhập </span></a>
+                                    </button>
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            <div class="bottom_header">
+                <div class="container">
+                    <div class="menu_bottomheader">
+                        <span class="box-icon" id="danhmuc">     
+                            <img width="30" height="30" src="../imageDoAn/danhmuc.png" alt="Danh mục">                        
+                        </span>
+                        <p>DANH MỤC SẢN PHẨM</p>
+                    </div>
+                    <div class="right_bottom_header">
+                        <ul class="bottom_header_transition">
+                            <li style="width: 20%;">
+                                <span class="box-icon">
+                                    <img src="../imageDoAn/icon1.webp" width="30px">
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Chính sách bảo hành</p>
+                            </li>
+                            <li style="width: 14%;">
+                                <span class="box-icon">
+                                    <img src="../imageDoAn/icon2.webp" width="30px">
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Khuyến mãi</p>
+                            </li>
+                            <li style="width: 12%;">
+                                <span class="box-icon">
+                                    <img src="../imageDoAn/icon3.webp" width="30px">
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Trả góp</p>
+                            </li>
+                            <li style="width: 15%;">
+                                <span class="box-icon">
+                                    <img src="../imageDoAn/icon4.webp" width="30px">
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Tin công nghệ</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="container-none-filter">
+            <section>
+                <div class="TM">
+                    <div style="width: 24%; background-color: whitesmoke;">
+                        <ul class="danhmuc">
+                            <li class="MenuC">
+                                <a class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Trang chủ</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li> 
+                            <li class="MenuC" id="laptop">
+                                <a class="list-menu-leftshow" onclick="handleeFilterFileresult(this)" value="Laptop">
+                                    <span class="box-icon">
+                                        <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">
+                                    </span>
+                                    <p id="menuright_bottom-laptop" class="box-text">Laptop</p>
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            <li class="MenuC">
+                                <a class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Trả góp</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="MenuC" id="nscd">
+                                <a class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Nhu cầu sử dụng</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="MenuC">
+                                <a class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Tin tức</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-active-righttm">
+                        <div id="menu-active-tm">
+                            <div class="menu_active-tm">
+                                <img style="width: 100%; height: 100%;" src="../imageDoAn/active-lap.webp"/>
+                            </div>
+                            <div class="menu_active-tm">
+                                <img style="width: 100%; height: 100%;" src="../imageDoAn/active-lap2.webp"/>
+                            </div>
+                            <div class="menu_active-tm">
+                                <img style="width: 100%; height: 100%;" src="../imageDoAn/active-lap3.webp"/>
+                            </div>
+                            <div class="menu_active-tm">
+                                <img style="width: 100%; height: 100%;" src="../imageDoAn/active-lap4.webp"/>
+                            </div>
+                            <script>
+                                w3.slideshow(".menu_active-tm", 1500);
+                            </script>
+                        </div>
+                        <!--Phần danh sách cho mỗi từ khóa của list-->
+                        <div id="list-laptop">
+                            <div class="menulaptop-content">
+                                <div class="sub-megamenu-item smg-1">
+                                    <a class="sub-megamenu-item-name" href="#">Thương hiệu</a>	
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" value="ASUS">ASUS</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="searchProducts(this)" value="ACER">ACER</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="MSI">MSI</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="LENOVO">LENOVO</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="DELL">DELL</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="HP">HP</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="LG">LG</a>		
+                                </div>
+                                <div class="sub-megamenu-item smg-2">
+                                    <a class="sub-megamenu-item-name" href="#">Giá bán</a>	
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value = "1">Dưới 10 triệu</a>		
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value = "2">Từ 10 đến 15 triệu</a>		
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value = "3">Trên 15 đến 25 triệu</a>	
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value = "4">Trên 25 triệu</a>		
+                                </div>
+                                <div class="sub-megamenu-item smg-3">
+                                    <a class="sub-megamenu-item-name" href="#">CPU Intel - AMD</a>	
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value="Intel Core i3">Intel Core i3</a>		
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value="Intel Core i5">Intel Core i5</a>		
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value="Intel Core i7">Intel Core i7</a>
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value="Intel Core i9">Intel Core i9</a>		
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value="ADM Ryzen">AMD Ryzen</a>		
+                                    <a class="sub-megamenu-item-filter" href="#" onclick="handleeFilterFileresult(this)" value="Xeon">Xeon</a>		
+
+                                </div>
+                                <div class="sub-megamenu-item smg-4">
+                                    <a class="sub-megamenu-item-name" href="#">Nhu cầu sử dụng</a>	
+                                    <a class="sub-megamenu-item-filter" href="#">Đồ họa - Studio</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Học sinh - Sinh viên</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Mỏng nhẹ cao cấp</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Studio RTX 40 series</a>		
+                                </div>
+                                <div class="sub-megamenu-item smg-5">
+                                    <a class="sub-megamenu-item-name" href="#">Laptop ASUS</a>	
+                                    <a class="sub-megamenu-item-filter" href="#">ASUS OLED Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Vivobook Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Zenbook Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">ExpertBook Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">ProArt StudioBook Series</a>		
+                                </div>
+                                <div class="sub-megamenu-item smg-6">
+                                    <a class="sub-megamenu-item-name" href="#">Laptop ACER</a>	
+                                    <a class="sub-megamenu-item-filter" href="#">Aspire Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Swift Series</a>		
+                                </div>
+                                <div class="sub-megamenu-item smg-7">
+                                    <a class="sub-megamenu-item-name" href="#">Laptop MSI</a>	
+                                    <a class="sub-megamenu-item-filter" href="#">Modern Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Prestige Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Summit Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">CREATOR Series</a>		
+                                </div>
+                                <div class="sub-megamenu-item smg-8">
+                                    <a class="sub-megamenu-item-name" href="#">Laptop LENOVO</a>	
+                                    <a class="sub-megamenu-item-filter" href="#">ThinkBook Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">IdeaPad Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">IdeaPad Pro Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">ThinkPad Series</a>		
+                                    <a class="sub-megamenu-item-filter" href="#">Yoga Series</a>		
+                                </div>
+                                <div class="sub-megamenu-item smg-9">
+                                    <a class="sub-megamenu-item-name" href="#">Laptop DELL</a>	
+                                    <a class="sub-megamenu-item-filter" href="#">Inspiron Series</a>		                
+                                    <a class="sub-megamenu-item-filter" href="#">Vostro Series</a>		               
+                                    <Latitude class="sub-megamenu-item-filter" href="#">Latitude Series</a>		               
+                                    <a class="sub-megamenu-item-filter" href="#">XPS Series</a>		               
+                                </div>           
+                                <div class="sub-megamenu-item smg-10">
+                                    <a class="sub-megamenu-item-name" href="#">Laptop HP</a>	              
+                                    <a class="sub-megamenu-item-filter" href="#">HP Pavilion</a>		              
+                                </div>           
+                            </div>       
+                        </div>
+                        <div class="menu-ncsd-content" id="list-nhucausudung">
+                            <ul class="ncsd-container-ul">
+                                <li>
+                                    <a href="#" id="textphanloai" onclick="handleeFilterFileresult(this)" value="gaming">Hiệu năng - Gaming</a>
+                                </li>
+                                <li>
+                                    <a href="#" id="textphanloai" onclick="handleeFilterFileresult(this)" value="doanhnhan">Doanh nhân - Bền bỉ</a>
+                                </li>
+                                <li>
+                                    <a href="#" id="textphanloai" onclick="handleeFilterFileresult(this)" value="dohoa">Đồ họa - thiết kế</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-dqsd-content" id="list-daquasudung">
+                            <ul class="dqsd-container-ul">
+                                <li>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="oldgaming">Laptop Gaming cũ</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="oldvanphong">Laptop văn phòng cũ</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="new99">Laptop new 99%</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="other">Laptop cũ khác</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="banner">
+                <div class="container-banner">
+                    <div class="boder-banner-box">
+                        <div style="display: flex;">
+                            <div class="item-banner">
+                                <a href="#">
+                                    <img src="../imageDoAn/banner1.png" alt="1"/>
+                                </a>
+                            </div>
+                            <div class="item-banner">
+                                <a href="#">
+                                    <img src="../imageDoAn/banner2.png" alt="2"/>
+                                </a>
+                            </div>
+                            <div class="item-banner">
+                                <a href="#">
+                                    <img src="../imageDoAn/banner3.png" alt="3"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="logo">
+                <div class="container-logo">
+                    <div>
+                        <div class="d-flex-logo" style="display: flex; justify-content: center; margin-right: 40px;">
+                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="ACER">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="../imageDoAn/acer.png" alt="acer">
+                                        <p>Acer</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="ASUS">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="../imageDoAn/asus.png" alt="asus">
+                                        <p>Asus</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="LENOVO">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="../imageDoAn/lenovo.png" alt="lenovo">
+                                        <p>Lenovo</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="DELL">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="../imageDoAn/dell..png" alt="dell">
+                                        <p>Dell</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="HP">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="../imageDoAn/hp.png" alt="hp">
+                                        <p>Hewlett-Packard</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="MSI">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="../imageDoAn/msi.png" alt="msi">
+                                        <p>MSI</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="APPLE">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="../imageDoAn/apple.png" alt="apple">
+                                        <p>Apple</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="item-banner-bottom">
+                <div class="container">
+                    <div class="box-item-show">
+                        <a href="#" onclick="handleeFilterFileresult(this)" value="gaming">
+                            <img src="../imageDoAn/itembannerbottom.webp" alt="Hiệu năng - Gaming">
+                        </a>
+                    </div>
+                    <div class="box-item-show">
+                        <a href="#">
+                            <img src="../imageDoAn/itembannerbottom2.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="box-item-show">
+                        <a href="#">
+                            <img src="../imageDoAn/itembannerbottom3.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="box-item-show">
+                        <a href="#">
+                            <img src="../imageDoAn/itembannerbottom4.webp" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+         
+            <!--Laptop Gaming-->
+            <div class="selling-show-gaming" id="selling-show-gaming">
+                <div class="hang">
+                    <div class="congdung">| LAPTOP HIỆU NĂNG - GAMING</div>
+                    <ul class="nhan">
+                        <li onclick="handleeFilterFileresult(this)" value="MSI"> MSI</li>
+                        <li onclick="handleeFilterFileresult(this)" value="DELL"> DELL </li>
+                        <li> ASUS </li>
+                        <li> HP </li>
+                        <li> LENOVO </li>
+                        <li> ACER</li>
+                        <li> APPLE </li>
+                    </ul>
+                </div>  
+                <div class="container-gaming" id="container-gaming">
+                    <div class="list1-gaming" id="list-gaming"></div>
+                    <div class="listPage-gaming" id="pagenumber-gaming"></div>
+                </div>
+            </div>
+            <!--Laptop Doanh Nhân-->
+            <div class="selling-show-doanhnhan" id="selling-show-doanhnhan">
+                <div class="hang">
+                    <div class="congdung">| LAPTOP DOANH NHÂN - BUSINESS</div>
+                    <ul class="nhan">
+                        <li> MSI</li>
+                        <li> DELL </li>
+                        <li> ASUS </li>
+                        <li> HP </li>
+                        <li> LENOVO </li>
+                        <li> ACER</li>
+                        <li> APPLE </li>
+                    </ul>
+                </div>  
+                <div class="container-doanhnhan" id="container-doanhnhan">
+                    <div class="list1-doanhnhan" id="list-doanhnhan"></div>
+                    <div class="listPage-doanhnhan" id="pagenumber-doanhnhan"></div>
+                </div>
+            </div>
+            <!--Laptop Đồ Họa-->
+            <div class="selling-show-dohoa" id="selling-show-dohoa">
+                <div class="hang">
+                    <div class="congdung">| LAPTOP THIẾT KẾ - ĐỒ HỌA</div>
+                    <ul class="nhan">
+                        <li> MSI</li>
+                        <li> DELL </li>
+                        <li> ASUS </li>
+                        <li> HP </li>
+                        <li> LENOVO </li>
+                        <li> ACER</li>
+                        <li> APPLE </li>
+                    </ul>
+                </div>  
+                <div class="container-dohoa" id="container-dohoa">
+                    <div class="list1-dohoa" id="list-dohoa"></div>
+                    <div class="listPage-dohoa" id="pagenumber-dohoa"></div>
+                </div>
+            </div>
+        </main>
+        <div id="container-filter-search" style="display: none;">
+            <div class="filterproducts">
+                <ul class="container-filter">
+                    <li id="filterthuonghieu" class="title">
+                        <div class="item-checkbox" id="item-thuonghieu">
+                            <p>Thương hiệu</p>
+                        </div>
+                        <div class="group-filter" id="group-filter-thuonghieu">
+                            <div class="layer-content" id="layer-content">
+                                <ul id="listthuonghieu-checkbox" class="listcheckbox">
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="ASUS">ASUS
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="HP">HP
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="APPLE">APPLE
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="LENOVO">LENOVO
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="DELL">DELL
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="filterlocgia" class="title">
+                        <div class="item-checkbox" id="item-gia">
+                            <p>Lọc giá</p>
+                        </div>
+                        <div class="group-filter" id="group-filter-gia">
+                            <div class="layer-content" id="layer-content">
+                                <ul id="listgia-checkbox" class="listcheckbox">
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="gia" value="1">Dưới 10.000.000đ
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="gia" value="2">Từ 10.000.000đ - 15.000.000đ
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="gia" value="3">Từ 15.000.000đ - 25.000.000đ
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="gia" value="4">Trên 25.000.000đ
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="filterssd" class="title">
+                        <div class="item-checkbox" id="item-ssd">
+                            <p>SSD</p>
+                        </div>
+                        <div class="group-filter" id="group-filter-ssd">
+                            <div class="layer-content" id="layer-content">
+                                <ul id="listssd-checkbox" class="listcheckbox">
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="ssd" value="512">512GB
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="ssd" value="1TB">1TB
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="ssd" value="2TB">2TB
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="filtercpu" class="title">
+                        <div class="item-checkbox" id="item-cpu">
+                            <p>CPU</p>
+                        </div>
+                        <div class="group-filter" id="group-filter-cpu">
+                            <div class="layer-content" id="layer-content">
+                                <ul id="listcpu-checkbox" class="listcheckbox">
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="Intel Core i3">Intel Core i3
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="Intel Core i5">Intel Core i5
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="Intel Core i7">Intel Core i7
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="Intel Core i9">Intel Core i9
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="Xeon">Xeon
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="ADM Ryzen 3">ADM Ryzen 3
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="ADM Ryzen 5">ADM Ryzen 5
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="cpu" value="ADM Ryzen 7">ADM Ryzen 7
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="filtervga" class="title">
+                        <div class="item-checkbox" id="item-vga">
+                            <p>VGA</p>
+                        </div>
+                        <div class="group-filter" id="group-filter-vga">
+                            <div class="layer-content" id="layer-content">
+                                <ul id="listvga-checkbox" class="listcheckbox">
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 3050">RTX 3050
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 3050 Ti">RTX 3050 Ti
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 3060">RTX 3060
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 3070">RTX 3070 
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 3070 Ti">RTX 3070 Ti
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 4050">RTX 4050
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 4060">RTX 4060
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 4070">RTX 4070
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 4070 Ti">RTX 4070 Ti
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 4080">RTX 4080
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="vga" value="RTX 4090">RTX 4090
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>  
+            </div>
+            <div class="container-search-products">
+                <div id="filter-result"></div>
+                <div class="selling-products">
+                    <div class="item-selling-products" id="item-selling-products">  
+                    </div>
+                </div>
+                <div id="pagenumber2" style="clear: both;" align="center">
+                </div>
+            </div>
+        </div>
+        <div style="clear: both; height: 120px; background-color: beige;">
+            
+        </div>
+        <div id="gioithieu" style="display: none;">
+            <strong style="font-size: 20px;">Giới thiệu</strong>
+        </div>
+        <div id="doitra" style="display: none;">
+            <strong style="font-size: 20px;">Chính sách đổi trả</strong>
+        </div>  
+        <div id="baohanh" style="display: none;">
+            <strong style="font-size: 20px;">Chính sách bảo hành</strong>
+        </div> 
+        <div id="giaohang" style="display: none;">
+            <strong style="font-size: 20px;">Chính sách giao hàng</strong>
+        </div>
+        <div id="baomat" style="display: none;">
+            <strong style="font-size: 20px;">Chính sách bảo mật</strong>
+        </div> 
+        <div id="dichvu" style="display: none;">
+            <strong style="font-size: 20px;">Điều khoản dịch vụ</strong>
+        </div>
+        <div id="thanhtoan" style="display: none;">
+            <strong style="font-size: 20px;">Thanh Toán</strong>
+        </div>
+        <div style="width: 100%;height: 300px;background-color:rgb(29, 27, 27);">
+            <div class="footer2">
+                <div class="thongtin">
+                    <div>
+                        <a style="text-decoration: none;color: white;display: flex;">
+                            <img class="map" src="../imageDoAn/laptop.png" alt="8Lap">&nbsp; LapTopPro
+                        </a>
+                    </div>
+                    <div>  LapTopPro cung cấp laptop cao cấp</div>
+                    <div>
+                        <a href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank" style="text-decoration: none;color: white;">
+                            <img class="map" src="../imageDoAn/vitri.png"> Đ.An Dương Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh
+                        </a>
+                    </div>
+                    <div>
+                        <a href="tel:0123456789" style="text-decoration: none;color: white;display: flex;">
+                            <img class="map" src="../imageDoAn/phone (1).png">&nbsp; 0123456789
+                        </a>
+                    </div>
+                    <div>
+                        <a href="mailto:8Lap@gmail.com" style="text-decoration: none;color: white;display: flex;">
+                            <img class="map" src="../imageDoAn/envelope.png">&nbsp; LapTopPro@gmail.com
+                        </a>
+                    </div>
+                    <div><img src="../imageDoAn/dathongbao_48067cd02fae41b68bf0294777c39c94_compact.png"></div>
+                </div>
+                <div class="thongtin">
+                    <div>CHÍNH SÁCH</div>
+                    <li id='gt' onclick="show1(this);"><a style="color: white;text-decoration: none;" href="#">Giới thiệu</a></li>
+                    <li id='dt' onclick="show1(this);"><a style="color: white;text-decoration: none;" href="#">Chính sách đổi trả</a></li>
+                    <li id='bm' onclick="show1(this);"><a style="color: white;text-decoration: none;" href="#">Chính sách bảo mật</a></li>
+                    <li id='gh' onclick="show1(this);"><a style="color: white;text-decoration: none;" href="#">Chính sách giao hàng</a></li>
+                    <li id='bh' onclick="show1(this);"><a style="color: white;text-decoration: none;" href="#">Chính sách bảo hành</a></li>
+                    <li id='dv' onclick="show1(this);"><a style="color: white;text-decoration: none;" href="#">Điều khoản dịch vụ</a></li>
+                    <li id='tt' onclick="show1(this);"><a style="color: white;text-decoration: none;" href="#">Thanh toán</a></li>
+                </div>
+                <div class="thongtin">
+                    <div>HƯỚNG DẪN</div>
+                    <li>Sản phẩm khuyến mãi</li>
+                    <li>Sản phẩm nổi bật</li>
+                    <li>Tất cả sản phẩm</li>
+                </div>
+                <div class="thongtin">
+                    <div>TỔNG ĐÀI HỖ TRỢ</div>
+                    <div>
+                        <span>Gọi mua hàng:</span>
+                        <a href="tel:0123456789" style="text-decoration: none;">0123456789</a>
+                        <span>(8h30-21h)</span>
+                    </div>
+                    <div>
+                        <span>Gọi bảo hành:</span>
+                        <a href="tel:0123456789" style="text-decoration: none;">0123456789</a>
+                        <span>(8h30-21h)</span>
+                    </div>
+                    <div>
+                        <span>Gọi khiếu nại:</span>
+                        <a href="tel:0123456789" style="text-decoration: none;">0123456789</a>
+                        <span>(8h30-21h)</span>
+                    </div>
+                    <div>PHƯƠNG THỨC THANH TOÁN</div>
+                    <div><img src="../imageDoAn/footer_trustbadge.webp"></div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 50px;display: flex;align-items: center;color:white;background-color: black;justify-content: center;">© Copyright 2023 By 8Lap. Powered by Haravan</div>
+      </div>
+
+
+
+      <script>
+      
+      function show1(obj) {
+        a = obj;
+        console.log(a.id);
+        switch (a.id) {
+            case 'gt':
+                var gioiThieu = document.getElementById("gioithieu").innerHTML;
+                document.getElementById("tong").innerHTML = gioiThieu;
+                break;
+            case 'dt':
+                var doiTra = document.getElementById("doitra").innerHTML;
+                document.getElementById("tong").innerHTML = doiTra;
+                break;
+            case 'bm':
+                var baoMat = document.getElementById("baomat").innerHTML;
+                document.getElementById("tong").innerHTML = baoMat;
+                break;
+            case 'gh':
+                var giaoHang = document.getElementById("giaohang").innerHTML;
+                document.getElementById("tong").innerHTML = giaoHang;
+                break;
+            case 'bh':
+                var baoHanh = document.getElementById("baohanh").innerHTML;
+                document.getElementById("tong").innerHTML = baoHanh;
+                break;
+            case 'dv':
+                var dichVu = document.getElementById("dichvu").innerHTML;
+                document.getElementById("tong").innerHTML = dichVu;
+                break;
+            default:
+                var thanhToan = document.getElementById("thanhtoan").innerHTML;
+                document.getElementById("tong").innerHTML = thanhToan;
+                break;
+        }
+    }
+
+      </script>
+    <script src="../js/login_header.js"></script>
+    <script src="../js/cart_header.js"></script>
+    <script src="../js/listactive.js"></script> 
+    <script src="../js/listdaquasudung.js"></script>
+    <script src="../js/Locsanpham.js"></script>
+  <!--  <script src="./js/ListSearchProducts.js"></script>  -->
+  <script src="../js/ListFilterProducts.js"></script>   
+    <script src="../js/Phanloai.js"></script>
+    <script src="../js/filterproducts.js"></script>f
+    <script src="../js/testphantrang.js"></script>
+       <script>
+        document.getElementById("dangxuat").style.display="none";
+        document.getElementById("admin").style.display="none";
+        hienthidangnhap();
+function hienthidangnhap() {
+    var loggedInEmail = localStorage.getItem('loginemail');
+  
+    // Convert the JSON string back to an object
+    loggedInEmail = JSON.parse(loggedInEmail);
+  
+    // Get the list of users from localStorage
+    var users = JSON.parse(localStorage.getItem('users')) || [];
+  
+    // Find the user with the matching email
+    var userIndex = users.findIndex(user => user.email === loggedInEmail.email);
+    
+    if (users[userIndex].role=== 'Admin')
+    {
+        document.getElementById("admin").style.display="block";
+      document.getElementById("dangnhap").style.display="none";
+      document.getElementById("dangxuat").style.display="none"; 
+    } else
+    if (users[userIndex].status=== 'True')
+    {
+        document.getElementById("admin").style.display="none";
+      document.getElementById("dangnhap").style.display="none";
+      document.getElementById("dangxuat").style.display="block"; 
+    } else
+    if (loggedInEmail===null)
+    {
+      document.getElementById("admin").style.display="none";
+      document.getElementById("dangnhap").style.display="block";
+      document.getElementById("dangxuat").style.display="none";
+    }
+  }
+  function logout() {
+  var loggedInEmail = localStorage.getItem('loginemail');
+
+  // Convert the JSON string back to an object
+      loggedInEmail = JSON.parse(loggedInEmail);
+  // Get the list of users from localStorage
+  var users = JSON.parse(localStorage.getItem('users')) || [];
+
+  // Find the user with the matching email
+  var userIndex = users.findIndex(user => user.email === loggedInEmail.email );
+
+  // Update the user's status to "False"
+  if (userIndex !== -1) {
+      users[userIndex].status = 'False';
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.removeItem('loginemail');
+      alert("Đăng xuất thành công!");
+      // Redirect to the login page or any other desired page after logout
+      window.location.href = "Trangchu_DoAn.html";
+  } else {
+      alert("Đăng xuất thất bại. Người dùng không tồn tại!");
+  }
+}
+function login(event) {
+  // Lấy từ form login
+  event.preventDefault();
+  var email1 = document.getElementById("gmail").value;
+  var password1 = document.getElementById("firewall").value;
+
+  // Kiểm tra từ localstorage
+  var users = JSON.parse(localStorage.getItem('users')) || [];
+
+
+
+  // Tìm email và mật khẩu trong localstorage
+  var loggedInUser = users.find(user => user.email === email1 && user.password === password1 && user.role === "User" );
+  var loggedInAdmin = users.find(user => user.email === email1 && user.password === password1 && user.role === "Admin" );
+  
+  if(loggedInAdmin)
+  {  
+
+     
+    var userIndex= users.findIndex(account => account.email === document.getElementById('gmail').value);
+    users[userIndex].status='True';
+    localStorage.setItem('loginemail', JSON.stringify({ email: email1, role: 'Admin' }));
+    localStorage.setItem('users', JSON.stringify(users));
+    
+    alert("Đăng nhập thành công!, Chào Admin");
+      window.location.href="Layout admin.html";
+  }  
+  else if (loggedInUser) {
+    var userIndex= users.findIndex(account => account.email === document.getElementById('gmail').value);
+    users[userIndex].status='True';
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('loginemail', JSON.stringify({ email: email1, role: 'User' }));
+    alert("Đăng nhập thành công!");
+      window.location.href="Trangchu_DoAn.html";
+  } else {
+    
+      alert("Tài khoản hoặc mật khẩu không chính xác!");
+  }
+}
+
+    </script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

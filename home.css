@@ -1,0 +1,60 @@
+.home-slider{
+    width: 80%;
+    height: 1000px;
+    border: 1px solid yellow;
+    margin-left: 150px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.boder-banner-box{
+    width: 85%;
+    height: 210px;
+    background-color: white;
+    margin-left: 120px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.item-banner{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.item-banner img{
+    border-radius: 5px;
+}
+/*CSS LOGO THUONG HIEU*/
+.container-logo{
+    width: 85%;
+    height: 180px;
+    background-color: white;
+    margin-left: 120px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.item-banner-hover img{
+    border: 1px solid rgb(222, 225, 230);
+    border-radius: 5px;
+    width: 110px;
+    height: 110px;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.box-cat {
+    text-align: center; 
+}
+
+.box-cat a {
+    text-decoration: none; /* Loại bỏ dấu gạch chân */
+}
+
+.box-cat p {
+    margin: 5px; /* Loại bỏ khoảng cách ở trên và dưới văn bản */
+    margin-left: 40px;
+}
+/* CSS cho phần phóng to ảnh khi di chuột vào */
+.item-banner-hover:hover img {
+    transform: scale(1.1); /* Tăng kích thước ảnh lên 1.1 lần */
+    transition: transform 0.3s ease; /* Tạo hiệu ứng trôi chảy */
+}

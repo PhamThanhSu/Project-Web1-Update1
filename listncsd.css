@@ -1,0 +1,29 @@
+.menu-ncsd-content{
+    display: none;
+    width: 100%;
+    height: 352px; 
+    margin-left: 0px; 
+    margin-top: -2px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; /* Ẩn phần ảnh bị vượt ra khỏi khung */
+    background-color:  wheat;
+    overflow: auto;
+}
+.ncsd-container-ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 5px 20px 10px;
+    box-sizing: border-box;
+}
+.ncsd-container-ul li{
+    width: 20%;
+}
+.ncsd-container-ul li a{
+    text-decoration: none;
+    color: #E30019;
+    font-weight: 600;
+    font-family: 'SF Pro Display', 'Arial', sans-serif;
+}

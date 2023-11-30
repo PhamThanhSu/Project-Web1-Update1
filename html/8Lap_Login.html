@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content - Type" content="text/html; charswt-utf-8">
+        <title></title>
+    <link rel="stylesheet" href="../cssDoAn/style.css">
+    </head>
+    <body leftmargin="0px" rightmargin="0px" topmargin="0px">
+       
+
+
+
+
+
+         <div class="wrapper">
+            <span class="icon-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </span>
+            <div class="form-box login">
+                <h2>Đăng nhập</h2>
+                <form onsubmit="login(event)">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="email" required name="email" id="gmail">
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" required name="password" id="firewall">
+                        <label>Mật khẩu</label>
+                    </div>
+                     
+                    <div class="remember"> 
+                        <label>
+                            <input type="checkbox"> Ghi nhớ tài khoản
+                        </label>
+                    </div>
+                    
+                    <div class="login-forgot">
+                    <p>Quên mật khẩu? <a href="#forgot" class="ForgotPass-link">Khôi phục mật khẩu</a> </p>
+                    </div>
+                   
+                    <button type="submit" class="btn">Đăng nhập</button>
+                    <div class="login-register">
+                        <p>Khách hàng mới? <a href="#signup" class="register-link">Đăng ký</a> </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register" id="signup">
+                <h2>Đăng ký</h2>
+                <form onsubmit="signup()" action="#">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="email" required name="email" id="email">
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" required name="password" id="password">
+                        <label>Mật khẩu</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" required name="checkpassword" id="checkpassword">
+                        <label>Xác nhận mật khẩu</label>
+                    </div>
+                    <div class="remember"> 
+                        <label>
+                            <input type="checkbox"> Chấp nhận điều khoản dịch vụ
+                        </label>
+                        
+                    </div>
+                    <button type="submit" class="btn" a href="../html/8Lap_Login.html">Đăng ký</button>
+                    
+                </form>
+            </div>
+             
+            <div class="form-box ForgotPassword" id="forgot">
+                <h2>Quên mật khẩu</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="email" required id="email">
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" required id="password">
+                        <label>Mật khẩu hiện tại</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" required id="password">
+                        <label>Mật khẩu mới</label>
+                    </div>
+                    <button type="submit" class="btn" a href="../html/8Lap_Login.html">Đổi mật khẩu</button>
+                    
+                </form>
+            </div>
+
+      <script src="../js/script.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

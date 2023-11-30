@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content - Type" content ="text/html; charswt-utf-8"/>
+<script  src="https://kit.fontawesome.com/72665551a7.js"> </script>
+<link rel="stylesheet" href="../cssDoAn/LayoutAdmin.css">
+<link rel="stylesheet" href="../cssDoAn/topheader.css">
+<link rel="stylesheet" href="../cssDoAn/sellingproducts.css">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../cssDoAn/list.css">
+<link rel="stylesheet" href="../cssDoAn/topheader.css">
+<link rel="stylesheet" href="../cssDoAn/bottomheader.css">
+<link rel="stylesheet" href="../cssDoAn/show.css">
+<link rel="stylesheet" href="../cssDoAn/home.css">
+<link rel="stylesheet" href="../cssDoAn/itembannerbottom.css">
+<link rel="stylesheet" href="../cssDoAn/sellingproducts.css">
+<link rel="stylesheet" href="../cssDoAn/dangnhap_header.css">
+<link rel="stylesheet" href="../cssDoAn/responsivelayout.css">
+<link rel="stylesheet" href="../cssDoAn/cart_header.css">
+<link rel="stylesheet" href="../cssDoAn/listlaptop.css">
+<link rel="stylesheet" href="../cssDoAn/listncsd.css">
+<link rel="stylesheet" href="../cssDoAn/listdaquasudung.css">
+<title>abc</title>
+
+</head>
+
+<body leftmargin="0px" rightmargin="0px" topmargin="0px">
+    <div>
+        <div class="top_header">
+            <div class="logo-header">
+                <a href="../html/Trangchu_DoAn.html">
+                    <img width="240" height="80" src="../imageDoAn/logo-removebg-preview.png" alt="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+        <div id="menu" class="">
+            <ul>
+                <li class="icon" ><i class="fa-solid fa-house"></i><a href="#" onclick="showContent('home-content')">Trang chủ </a></li>
+                <li class="icon" id="taikhoan"><i class="fa-solid fa-user"></i><a href="#" onclick="showContent('taikhoan-content')">Quản lý tài khoản</a></li>
+                <li class="icon" id="doanhso"><i class="fa-solid fa-chart-simple"></i><a href="#" onclick="showContent('doanhso-content')">Doanh số</a></li>
+                <li class="icon" id="sanpham"><i class="fa-solid fa-laptop"></i><a href="#" onclick="showContent('sanpham-content')">Quản lý sản phẩm</a></li>
+                <li class="icon" id="hoadon"><i class="fa-solid fa-receipt"></i><a href="#" onclick="showContent('hoadon-content')">Quản lý hóa đơn</a></li>
+                <li class="icon" id="dangxuat"><i class="fa-solid fa-right-from-bracket"></i><a href="#"  onclick="logout()">Đăng xuất</a></li>
+                
+            </ul>
+        </div>
+
+        <div id="home-content" class="content-section"> 
+            <div class="selling-products">
+                <div class="headerad">Danh mục sản phẩm       </div>
+                <div class="item-selling-products" id="item-selling-products">
+               
+
+             
+                    </div>
+              </div>   
+        </div>
+                    
+        
+        <div id="taikhoan-content" class="content-section">
+            <div class="headerad" >Quản lý tài khoản</div>
+            <table class="tabletk" id="quanlytkTable" cellpadding="50" cellspacing="100"> 
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Mật khẩu</th>
+                        <th>Ngày đăng ký</th>
+                        <th>Quyền</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="doanhso-content" class="content-section">
+            <form id="frmdoanhso">
+                <h1 style="padding-left: 10%;"> TÌM KIẾM THEO NGÀY</h1>
+                <div class="containbox">
+                    <label for="datestart">Ngày bắt đầu:</label>
+                    <input type="date" id="datestart2">
+                </div>
+                <div class="containbox">
+                    <label for="dateend">Ngày kết thúc:</label>
+                    <input type="date" id="dateend2">
+                </div>
+                    <button type="submit" style="margin-top: 10px; margin-left: 10px;" onclick="thongKeDoanhSoTrong1Tuan();"> Tìm kiếm </button>
+               
+                
+            </form>        
+        </div>
+
+
+
+
+        <div id="sanpham-content" class="content-section">
+            <div id="alert">Xin chuyển sang máy tính có độ rộng lớn hơn 900px để chỉnh sửa  </div>
+            <div class="headerad"> QUẢN LÝ SẢN PHẨM</div>
+            <form id="frmnhapsp">
+                <h1 style="color: red; padding-left: 25%"> Thêm sản phẩm </h1>
+            <div class="containbox" >  
+                <label for="productID">ID:</label>
+                <input type="text" id="productID"> 
+            </div>
+
+
+            <div class="containbox" >  
+                <label for="productName">Tên sản phẩm:</label>
+                <input type="text" id="productName">
+            </div>
+            <div class="containbox" >  
+                <label for="productPrice">Giá:</label>
+                <input type="text" id="productPrice">
+           </div>
+           <div class="containbox" >  
+            <label for="productfirm">Hãng:</label>
+            <input type="text" id="productfirm">
+           </div>
+           <div class="containbox" >  
+            <label for="producttype">Phân loại:</label>
+            <select id="producttype">
+                <option value="gaming">Gaming</option>
+                <option value="dohoa">Đồ họa</option>
+                <option value="doanhnhan">Doanh nhân</option>
+                <option value="new99">Đời mới</option>
+                <option value="other">Khác</option>
+                </select>
+           </div>
+           <div class="containbox" >  
+            <label for="productCPU">CPU:</label>
+            <input type="text" id="productCPU">
+            </div>
+            <div class="containbox" >  
+                <label for="productRAM">RAM:</label>
+                <input type="text" id="productRAM">
+            </div>
+            <div class="containbox" >  
+                <label for="productSSD">SSD:</label>
+                <input type="text" id="productSSD">    
+            </div>
+            <div class="containbox" >  
+                <label for="productVGA">VGA:</label>
+                <input type="text" id="productVGA">
+            </div>
+           <div class="containbox" >  
+            Hình ảnh:    <input type="file" id="productImageInput" accept="image/*">
+            </div>
+           <div class="containbox">
+                <button onclick="addProduct()">Thêm sản phẩm</button>
+            </div>
+            </form>
+        
+            <table class="table" id="render" cellpadding="50" cellspacing="100"> 
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Hãng</th>
+                        <th>Giá</th>
+                        <th>Phân loại</th>
+                        <th>CPU</th>
+                        <th>RAM</th>
+                        <th>SSD</th>
+                        <th>VGA</th>
+                        <th>Hình</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        
+            
+        <!-- Bảng chỉnh sửa sản phẩm -->
+        <div id="editModal" class="modal">
+    
+            <div class="modal-content">
+                <span class="close" onclick="closeEditModal()">&times;</span>
+
+                <div class="containbox">
+                <label for="editProductName">Tên sản phẩm:</label>
+                <input type="text" id="editProductName" style="size: 80;">
+                </div>
+
+                <div class="containbox">
+                <label for="editProductPrice">Giá:</label>
+                <input type="text" id="editProductPrice">
+                 </div>
+
+                <div class="containbox">
+                <label for="editProductFirm">Hãng:</label>
+                <input type="text" id="editProductfirm">
+                </div>
+
+                <div class="containbox">
+                <label for="editProductCPU">CPU:</label>
+                <input type="text" id="editProductCPU">
+                </div>
+
+                <div class="containbox">
+                <label for="editProductRAM">RAM:</label>
+                <input type="text" id="editProductRAM">
+                </div>
+
+                <div class="containbox">
+                <label for="editProductSSD">SSD:</label>
+                <input type="text" id="editProductSSD">
+                </div> 
+
+                <div class="containbox">
+                <label for="editProductVGA">VGA:</label>
+                <input type="text" id="editProductVGA">
+                </div> 
+      
+                     <div class="containboximg">
+                <label for="existingImage">Hình hiện tại:</label>
+                <img id="existingImage" style="max-width: 100px; max-height: 100px;" alt="Existing Image">
+        
+                
+                <button onclick="removeExistingImage()">Xóa hình</button>
+                
+                  <label for="editProductImageInput">Chọn hình mới:</label>
+                  <input type="file" id="editProductImageInput" accept="image/*">
+
+              
+                <img id="selectedImage" style="max-width: 100px; max-height: 100px; " alt="Selected Image">
+                </div>
+        
+                <div><button onclick="saveEditedProduct()">Lưu</button> </div>
+            </div>
+        </div>
+        
+        </div>
+        <div id="hoadon-content" class="content-section">
+            <div>
+                <form id="frmdate">
+                    <h1 style="padding-left: 10%;"> TÌM KIẾM THEO NGÀY</h1>
+                    <div class="containbox">
+                        <label for="datestart">Ngày bắt đầu:</label>
+                        <input type="date" id="datestart">
+                    </div>
+                    <div class="containbox">
+                        <label for="dateend">Ngày kết thúc:</label>
+                        <input type="date" id="dateend">
+                    </div>
+                        <button type="submit" style="margin-top: 10px; margin-left: 10px;" onclick="filterByDate()"> Tìm kiếm </button>
+                   
+                    
+                </form>        
+        <table class="tablehoadon" id="quanlyhoadon" cellpadding="50" cellspacing="100"> 
+            <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Xem chi tiết</th>
+            <th>Tổng tiền</th>
+            <th>Ngày mua hàng</th>
+            <th>Tình trạng đơn hàng</th> 
+        </tr>
+        </thead>
+        </table>
+
+    </div>
+        <div id="detailbill" class="modal">
+            <!-- Bảng chỉnh sửa -->
+            <div class="modal-content">
+                <span class="close" onclick="closedetailbill()">&times;</span>
+                <table class="tablechitiet" style="width: 100%;" id="chitiethoadon1">
+                </thead>
+                </tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Hãng</th>
+                    <th>Giá tiền</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th> 
+                </tr>
+                </thead>
+                </table>
+                </div>
+                </div>
+
+    </div>
+        <div id="dangxuat-content" class="content-section"></div>
+    </div>
+
+    <script type="text/javascript">
+        function showContent(contentId) {
+     
+            var contentSections = document.getElementsByClassName('content-section');
+            for (var i = 0; i < contentSections.length; i++) {
+                contentSections[i].style.display = 'none';
+            }
+
+         
+            var selectedContent = document.getElementById(contentId);
+            if (selectedContent) 
+                selectedContent.style.display = 'block';
+            
+        }
+        
+    </script>
+    <script src="../js/Quanlysp.js"></script>
+    <script src="../js/renderad.js"></script>
+    <script src="../js/Quanlytk.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/Quanlydonhang.js"></script>
+   
+
+
+</body>
+</html>

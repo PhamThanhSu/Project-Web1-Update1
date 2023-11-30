@@ -1,0 +1,105 @@
+.top_header {
+    background-color: #1877f2;
+    color: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.logo-header{
+    width: 20%;
+    margin-left: 50px;
+    box-sizing: border-box;
+}
+
+/* CSS cho ô tìm kiếm trong header */
+.search-desktop {
+    width: 27%;
+    display: flex;
+    position: relative; /* Để có thể định vị nút tìm kiếm */
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; /* Để có thể định vị nút tìm kiếm */
+    justify-content: end;
+}
+
+.search-input {
+    width: 350px; 
+    height: 23px;
+    border: 1px solid #ccc; /* Để viền ô tìm kiếm */
+    border-radius: 5px;
+    padding: 10px; /* Điều chỉnh khoảng cách bên trong ô tìm kiếm */
+    color: #333; /* Màu văn bản trong ô tìm kiếm */
+}
+
+.btn-search {
+    background-color: #1877f2; /* Màu nền nút tìm kiếm */
+    border-radius: 5px;
+    width: 20%;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 3px; /* Đặt vị trí từ mép phải */
+}
+
+.menu_header{
+    width: 50%;
+}
+.list-menu-header {
+    width: 100%;
+    list-style: none; /* Ẩn dấu chấm trước danh sách */
+    margin: 7px 0px;
+    padding: initial;
+    display: flex;
+    align-items: center;
+}
+.list-menu-header-item{
+    width: 20%;
+}
+li .box-icon-topmenu{
+    margin-right: 10px;
+}
+
+#color-icon img{
+    filter: brightness(0) invert(1);
+   -webkit-filter: brightness(0) invert(1);
+}
+
+.menu_header ul li {
+    margin: 0 20px; /* Khoảng cách giữa các mục menu */
+}
+
+.menu_header ul li a {
+    text-decoration: none;
+    color: #fff; /*     Màu chữ cho các liên kết trong menu */
+    display: block; /* Hiển thị liên kết dưới dạng block để có thể sử dụng padding và margin */
+}
+
+.btn-login {
+    background-color: #ff6600; /* Màu nền nút Đăng Nhập */
+    color: #fff; /* Màu chữ trên nút Đăng Nhập */
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.menu_header .box-text{
+    display: flex;
+    flex-direction: column;
+}
+.icon_call{
+    margin: 10px;
+}
+header {
+    font-family: "Mulish",sans-serif!important;
+}

@@ -1,0 +1,90 @@
+
+.hang{
+    width: 80%;
+    transform: translateX(12.5%);
+    display: flex;
+}
+.congdung{
+    font-size: 25px;
+    width: 40%;
+    height:60px ;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;   
+}
+.nhan{
+    width: 60%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.nhan li{
+    width: 14%;
+    margin: 10px;
+    height: 35px;
+    display: inline-table;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nhan li:hover{
+    cursor: pointer;
+    background-color: rgb(55, 173, 194);
+}
+#container-number{
+    justify-content: center;
+    width: 80%;
+    transform: translateX(12.5%);
+    background-color:white;
+}
+#list{
+    width: 100%;
+    display: flex;
+    border: solid red 2px;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-left: 5px;
+}
+.listPage{
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+   
+}
+.listPage li{
+    background-color: white;
+    padding: 15px;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.listPage .active{
+    background-color: aqua;
+    color: white;
+}
+.thongtin{
+    width: 25%;
+    color: white;
+}
+.thongtin div,li{
+    margin-top: 15px;
+}
+.thongtin li:hover{
+    cursor: pointer;
+    color: rgb(33, 150, 213);
+}
+.footer{
+    width: 80%;
+    transform: translateX(12.5%);
+    display: flex; 
+}
+.map{
+    width: 6%;
+}
+.item{
+    width: 19%;
+    margin: 5px;
+    flex-direction: column;
+}
