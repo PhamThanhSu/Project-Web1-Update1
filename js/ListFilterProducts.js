@@ -1,6 +1,7 @@
 function ListSellingProductFilter(mangdaloc, filterthuonghieu = [], filtergiaban = [], filtercpu = [], filtervga = [], filterssd = []) {
    // let searchResults = [];
     let s ='';
+    let totalFilteredProducts = 0;
     const container = document.getElementById("item-selling-products");
     for (let i = 0; i < mangdaloc.length; i++) {
         const product = mangdaloc[i];
@@ -14,55 +15,38 @@ function ListSellingProductFilter(mangdaloc, filterthuonghieu = [], filtergiaban
         var ssd = product.ssd;
         var vga = product.vga;
         var lcd = product.lcd;
-        var price = product.price;
+        var price = removeCommas(product.price);
         console.log('filter.thuonghieu.length');
-        if (filterthuonghieu.length > 0) {
-            if (filterthuonghieu.includes(thuonghieu) == false)
-                continue;
+        if (filterthuonghieu.length > 0 && !filterthuonghieu.includes(thuonghieu)) {
+            continue;
         }
 
         if (filtergiaban.length > 0) {
-            if (removeCommas(price) < 10000000 && !filtergiaban.includes('1')) continue;
-            if (removeCommas(price) >= 10000000 && removeCommas(price) <= 15000000 && !filtergiaban.includes('2')) continue;
-            if (removeCommas(price) > 15000000 && removeCommas(price) <= 25000000 && !filtergiaban.includes('3')) continue;
-            if (removeCommas(price) > 25000000 && !filtergiaban.includes('4')) continue;
-        }
-
-        // Kiểm tra điều kiện cho CPU
-        if (filtercpu.length > 0) {
-            var cpuMatches = filtercpu.some(function(cpuValue) {
-            return product.cpu.includes(cpuValue);
-            });
-
-        // Nếu không có giá trị nào trong filtercpu match với cpu của sản phẩm, tiếp tục với sản phẩm tiếp theo
-        if (!cpuMatches) {
-            continue;
+            if (price < 10000000 && !filtergiaban.includes('1')) {
+                continue;
+            }
+            if (price >= 10000000 && price <= 15000000 && !filtergiaban.includes('2')) {
+                continue;
+            }
+            if (price > 15000000 && price <= 25000000 && !filtergiaban.includes('3')) {
+                continue;
+            }
+            if (price > 25000000 && !filtergiaban.includes('4')) {
+                continue;
             }
         }
-        // Kiểm tra điều kiện cho SSD
-        if (filterssd.length > 0) {
-            var ssdMatches = filterssd.some(function(ssdValue) {
-            return product.ssd.includes(ssdValue);
-            });
 
-        // Nếu không có giá trị nào trong filtercpu match với cpu của sản phẩm, tiếp tục với sản phẩm tiếp theo
-        if (!ssdMatches) {
+        if (filtercpu.length > 0 && !filtercpu.some(cpuValue => product.cpu.includes(cpuValue))) {
             continue;
-            }
         }
-        // Kiểm tra điều kiện cho VGA
-        if (filtervga.length > 0) {
-            var vgaMatches = filtervga.some(function(vgaValue) {
-            return product.vga.includes(vgaValue);
-            });
 
-        // Nếu không có giá trị nào trong filtercpu match với cpu của sản phẩm, tiếp tục với sản phẩm tiếp theo
-        if (!vgaMatches) {
+        if (filterssd.length > 0 && !filterssd.some(ssdValue => product.ssd.includes(ssdValue))) {
             continue;
-            }
         }
-        textss = document.getElementById('filter-result');
-        textss.innerHTML = "Laptop";
+
+        if (filtervga.length > 0 && !filtervga.some(vgaValue => product.vga.includes(vgaValue))) {
+            continue;
+        }
         s+=`<div class="itemproduct" id = "itemproduct" data-product-id="${product.id}">
                 <div>
                     <a href="#">
@@ -88,8 +72,11 @@ function ListSellingProductFilter(mangdaloc, filterthuonghieu = [], filtergiaban
                     </div>                    
                 </div>
             </div>`;   
+            totalFilteredProducts++;
     }
-    container.innerHTML = s;    
+    container.innerHTML = s;  
+    // Hiển thị tổng số sản phẩm
+    document.getElementById('total-products-message').innerText = `Sản phẩm (${totalFilteredProducts})`;
     const productElements = container.getElementsByClassName("itemproduct");
     for (let i = 0; i < productElements.length; i++) {
     let listItem = productElements[i];
@@ -106,7 +93,6 @@ function ListSellingProductFilter(mangdaloc, filterthuonghieu = [], filtergiaban
     showPage(thisPageloc, phantrangloc);
 
     var elements = document.querySelectorAll('.anh');
-
     elements.forEach(function (element) {
       handleImageHover(element);
     });
@@ -158,24 +144,24 @@ function removeCommas(inputString) {
 // Tạo một mảng để lưu trữ thông tin từ các phần tử
 //Lấy giá trị mảng sản phẩm từ LocalStorage
 /// Lấy dữ liệu từ local storage và chuyển đổi thành đối tượng JavaScript
- brandarray = JSON.parse(localStorage.getItem('brandarray'));
-console.log(brandarray);
-var listbrandfilter = `<ul id="listthuonghieu-checkbox" class="listcheckbox">`;
-// Kiểm tra xem filtertest có tồn tại và có chứa ít nhất một phần tử không
-for(var i=0; i< brandarray.length; i++) {
-    // Tạo chuỗi HTML cho danh sách các thương hiệu
-    console.log(brandarray[i]);
-    listbrandfilter += `
-        <li>
-            <label id="label-item-search">
-                <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="${brandarray[i]}">${brandarray[i]}
-            </label>
-        </li>`;
-        listbrandfilter += `</ul>`;
+//  brandarray = JSON.parse(localStorage.getItem('brandarray'));
+// console.log(brandarray);
+// var listbrandfilter = `<ul id="listthuonghieu-checkbox" class="listcheckbox">`;
+// // Kiểm tra xem filtertest có tồn tại và có chứa ít nhất một phần tử không
+// for(var i=0; i< brandarray.length; i++) {
+//     // Tạo chuỗi HTML cho danh sách các thương hiệu
+//     console.log(brandarray[i]);
+//     listbrandfilter += `
+//         <li>
+//             <label id="label-item-search">
+//                 <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="${brandarray[i]}">${brandarray[i]}
+//             </label>
+//         </li>`;
+//         listbrandfilter += `</ul>`;
 
-    // Gán chuỗi HTML vào một phần tử có id="listthuonghieu-checkbox"
-    document.getElementById('listthuonghieu-checkbox').innerHTML = listbrandfilter;
-}
+//     // Gán chuỗi HTML vào một phần tử có id="listthuonghieu-checkbox"
+//     document.getElementById('listthuonghieu-checkbox').innerHTML = listbrandfilter;
+// }
 
 
 
