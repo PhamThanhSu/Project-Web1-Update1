@@ -295,7 +295,66 @@
                                 <span class="small-text">Cart</span>
                                 </span> 
                             </div>
+                            <div class="header-action_dropdown" id="dropdownContent" style="display: none;">
+                                <div class="header-dropdown_content">
+                                    <div class="overflow-hidden relative-position">
+                                        <div class="account_header text-center">
+                                            <div class="account_title ">Giỏ hàng</div>
+                                        </div>
+                                        <div class="cart-content" id="cart-mini-wanda">
+                                            <div class="cart-view clearfix">
+                                                <div class="cart-scroll">
+                                                    <table id="cart-view">
+                                                        <tbody>
+                                                            <tr>
+                                                                <tr>
+                                                                    <td colspan="3" class="text-center"></td>
+                                                                </tr>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>    
+                                                   
+                                                </div>
+                                                
+                                                <span class="line"></span>
+                                                <table class="table-total">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="title-total" colspan="2">TỔNG TIỀN:</td>
+                                                            <td class="text-right" id="total-view-cart" >0₫</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 23.33%;" class="td1"></td>
+                                                            <td style="width: 53.33%; text-align: center;" class="tdMain">
+                                                                <a href="/checkout" class="checkoutBtn" >THANH TOÁN</a>
+                                                            </td>
+                                                            <td style="width: 23.33%;" class="td1"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>                                                       
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </li>
+                        <li class="list-menu-header-item">
+                                
+                        </li>
+                        <div class="form-cart-container" id="test">
+                            <div class="login-popup-cart" id="login-popup-cart">
+                            </div>
+                            <div class="login-content-cart" id="login-content-cart">
+                                <div class="formcart">
+                                    <!-- Nội dung của cửa sổ đăng nhập ở đây -->
+                                    <!-- Bạn có thể thêm các trường nhập, nút Đăng nhập, và nội dung khác -->
+                                    <div class="giohang">
+                                        <h2>GIỎ HÀNG</h2>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
                      <li class="list-menu-header-item">
                                     <button type="submit" class="btn-login" id="button-login" style="width: 95px;">
                                         <span  id="admin"  class="box-text"> <a href="../html/Layout admin.html">  Admin </span></a>
@@ -443,11 +502,11 @@
                                     <a class="sub-megamenu-item-name" href="#">Thương hiệu</a>	
                                     <a class="sub-megamenu-item-filter" id="test1" href="#" value="ASUS">ASUS</a>		
                                     <a class="sub-megamenu-item-filter" id="test2" href="#" value="ACER">ACER</a>		
-                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="MSI">MSI</a>		
-                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="LENOVO">LENOVO</a>		
-                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="DELL">DELL</a>		
-                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="HP">HP</a>		
-                                    <a class="sub-megamenu-item-filter" id="test" href="#" onclick="handleeFilterFileresult(this)" value="LG">LG</a>		
+                                    <a class="sub-megamenu-item-filter" id="test3" href="#"  value="MSI">MSI</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#"  value="LENOVO">LENOVO</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#"  value="DELL">DELL</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#" value="HP">HP</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#"  value="LG">LG</a>		
                                 </div>
                                 <div class="sub-megamenu-item smg-2">
                                     <a class="sub-megamenu-item-name" href="#">Giá bán</a>	
@@ -517,13 +576,13 @@
                         <div class="menu-ncsd-content" id="list-nhucausudung">
                             <ul class="ncsd-container-ul">
                                 <li>
-                                    <a href="#" id="textphanloai" onclick="handleeFilterFileresult(this)" value="gaming">Hiệu năng - Gaming</a>
+                                    <a href="#" class="textphanloai" id="textphanloai" value="gaming">Hiệu năng - Gaming</a>
                                 </li>
                                 <li>
-                                    <a href="#" id="textphanloai" onclick="handleeFilterFileresult(this)" value="doanhnhan">Doanh nhân - Bền bỉ</a>
+                                    <a href="#" class="textphanloai" id="textphanloai"  value="doanhnhan">Doanh nhân - Bền bỉ</a>
                                 </li>
                                 <li>
-                                    <a href="#" id="textphanloai" onclick="handleeFilterFileresult(this)" value="dohoa">Đồ họa - thiết kế</a>
+                                    <a href="#" class="textphanloai" id="textphanloai"  value="dohoa">Đồ họa - thiết kế</a>
                                 </li>
                             </ul>
                         </div>
@@ -552,17 +611,17 @@
                         <div style="display: flex;">
                             <div class="item-banner">
                                 <a href="#">
-                                    <img src="../imageDoAn/banner1.png" alt="1"/>
+                                    <img src="../imageDoAn/banner1.webp" alt="1"/>
                                 </a>
                             </div>
                             <div class="item-banner">
                                 <a href="#">
-                                    <img src="../imageDoAn/banner2.png" alt="2"/>
+                                    <img src="../imageDoAn/banner2.webp" alt="2"/>
                                 </a>
                             </div>
                             <div class="item-banner">
                                 <a href="#">
-                                    <img src="../imageDoAn/banner3.png" alt="3"/>
+                                    <img src="../imageDoAn/banner3.webp" alt="3"/>
                                 </a>
                             </div>
                         </div>
@@ -573,7 +632,7 @@
                 <div class="container-logo">
                     <div>
                         <div class="d-flex-logo" style="display: flex; justify-content: center; margin-right: 40px;">
-                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="ACER">
+                            <div class="item-banner-hover" onclick="DanhMucLapTop(this)" value ="ACER">
                                 <div class="box-cat">
                                     <a href="#">
                                         <img src="../imageDoAn/acer.png" alt="acer">
@@ -581,7 +640,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="ASUS">
+                            <div class="item-banner-hover" onclick="DanhMucLapTop(this)" value ="ASUS">
                                 <div class="box-cat">
                                     <a href="#">
                                         <img src="../imageDoAn/asus.png" alt="asus">
@@ -589,7 +648,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="LENOVO">
+                            <div class="item-banner-hover" onclick="DanhMucLapTop(this)" value ="LENOVO">
                                 <div class="box-cat">
                                     <a href="#">
                                         <img src="../imageDoAn/lenovo.png" alt="lenovo">
@@ -597,7 +656,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="DELL">
+                            <div class="item-banner-hover" onclick="DanhMucLapTop(this)" value ="DELL">
                                 <div class="box-cat">
                                     <a href="#">
                                         <img src="../imageDoAn/dell..png" alt="dell">
@@ -605,7 +664,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="HP">
+                            <div class="item-banner-hover" onclick="DanhMucLapTop(this)" value ="HP">
                                 <div class="box-cat">
                                     <a href="#">
                                         <img src="../imageDoAn/hp.png" alt="hp">
@@ -613,7 +672,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="MSI">
+                            <div class="item-banner-hover" onclick="DanhMucLapTop(this)" value ="MSI">
                                 <div class="box-cat">
                                     <a href="#">
                                         <img src="../imageDoAn/msi.png" alt="msi">
@@ -621,7 +680,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="item-banner-hover" onclick="handleeFilterFileresult(this)" value ="APPLE">
+                            <div class="item-banner-hover" onclick="DanhMucLapTop(this)" value ="APPLE">
                                 <div class="box-cat">
                                     <a href="#">
                                         <img src="../imageDoAn/apple.png" alt="apple">
@@ -636,23 +695,23 @@
             <div class="item-banner-bottom">
                 <div class="container">
                     <div class="box-item-show">
-                        <a href="#" onclick="handleeFilterFileresult(this)" value="gaming">
+                        <a href="#" onclick="DanhMucLapTop(this)" value="gaming">
                             <img src="../imageDoAn/itembannerbottom.webp" alt="Hiệu năng - Gaming">
                         </a>
                     </div>
                     <div class="box-item-show">
-                        <a href="#">
-                            <img src="../imageDoAn/itembannerbottom2.webp" alt="">
+                        <a href="#" onclick="DanhMucLapTop(this)" value="dohoa">
+                            <img src="../imageDoAn/itembannerbottom2.webp" alt="Đồ Họa - Thiết Kế">
                         </a>
                     </div>
                     <div class="box-item-show">
-                        <a href="#">
-                            <img src="../imageDoAn/itembannerbottom3.webp" alt="">
+                        <a href="#" onclick="DanhMucLapTop(this)" value="doanhnhan">
+                            <img src="../imageDoAn/itembannerbottom3.webp" alt="Doanh Nhân - Bền Bỉ">
                         </a>
                     </div>
                     <div class="box-item-show">
-                        <a href="#">
-                            <img src="../imageDoAn/itembannerbottom4.webp" alt="">
+                        <a href="#" onclick="DanhMucLapTop(this)" value="vanphong">
+                            <img src="../imageDoAn/itembannerbottom4.webp" alt="Văn Phòng - Học Tập">
                         </a>
                     </div>
                 </div>
@@ -663,13 +722,13 @@
                 <div class="hang">
                     <div class="congdung">| LAPTOP HIỆU NĂNG - GAMING</div>
                     <ul class="nhan">
-                        <li onclick="handleeFilterFileresult(this)" value="MSI"> MSI</li>
-                        <li onclick="handleeFilterFileresult(this)" value="DELL"> DELL </li>
-                        <li> ASUS </li>
-                        <li> HP </li>
-                        <li> LENOVO </li>
-                        <li> ACER</li>
-                        <li> APPLE </li>
+                        <li onclick="DanhMucLapTop(this)" value="MSI"> MSI</li>
+                        <li onclick="DanhMucLapTop(this)" value="DELL"> DELL </li>
+                        <li onclick="DanhMucLapTop(this)" value="ASUS"> ASUS </li>
+                        <li onclick="DanhMucLapTop(this)" value="HP"> HP </li>
+                        <li onclick="DanhMucLapTop(this)" value="LENOVO"> LENOVO </li>
+                        <li onclick="DanhMucLapTop(this)" value="ACER"> ACER</li>
+                        <li onclick="DanhMucLapTop(this)" value="APPLE"> APPLE </li>
                     </ul>
                 </div>  
                 <div class="container-gaming" id="container-gaming">
@@ -682,13 +741,13 @@
                 <div class="hang">
                     <div class="congdung">| LAPTOP DOANH NHÂN - BUSINESS</div>
                     <ul class="nhan">
-                        <li> MSI</li>
-                        <li> DELL </li>
-                        <li> ASUS </li>
-                        <li> HP </li>
-                        <li> LENOVO </li>
-                        <li> ACER</li>
-                        <li> APPLE </li>
+                        <li onclick="DanhMucLapTop(this)" value="MSI"> MSI</li>
+                        <li onclick="DanhMucLapTop(this)" value="DELL"> DELL </li>
+                        <li onclick="DanhMucLapTop(this)" value="ASUS"> ASUS </li>
+                        <li onclick="DanhMucLapTop(this)" value="HP"> HP </li>
+                        <li onclick="DanhMucLapTop(this)" value="LENOVO"> LENOVO </li>
+                        <li onclick="DanhMucLapTop(this)" value="ACER"> ACER</li>
+                        <li onclick="DanhMucLapTop(this)" value="APPLE"> APPLE </li>
                     </ul>
                 </div>  
                 <div class="container-doanhnhan" id="container-doanhnhan">
@@ -701,13 +760,13 @@
                 <div class="hang">
                     <div class="congdung">| LAPTOP THIẾT KẾ - ĐỒ HỌA</div>
                     <ul class="nhan">
-                        <li> MSI</li>
-                        <li> DELL </li>
-                        <li> ASUS </li>
-                        <li> HP </li>
-                        <li> LENOVO </li>
-                        <li> ACER</li>
-                        <li> APPLE </li>
+                        <li onclick="DanhMucLapTop(this)" value="MSI"> MSI</li>
+                        <li onclick="DanhMucLapTop(this)" value="DELL"> DELL </li>
+                        <li onclick="DanhMucLapTop(this)" value="ASUS"> ASUS </li>
+                        <li onclick="DanhMucLapTop(this)" value="HP"> HP </li>
+                        <li onclick="DanhMucLapTop(this)" value="LENOVO"> LENOVO </li>
+                        <li onclick="DanhMucLapTop(this)" value="ACER"> ACER</li>
+                        <li onclick="DanhMucLapTop(this)" value="APPLE"> APPLE </li>
                     </ul>
                 </div>  
                 <div class="container-dohoa" id="container-dohoa">
@@ -717,7 +776,14 @@
             </div>
         </main>
         <div id="container-filter-search" style="display: none;">
-            <div class="filterproducts">
+            <div class="container-search-products">
+                <div class="filterproducts">
+                    <div id="innertext">
+                        <div id="innertimkiem"></div>
+                        <div id="innertextketqua" class="result-text"></div>
+                    </div>
+                    <div id="total-products-message" class="result-text"></div>
+                </div>
                 <ul class="container-filter">
                     <li id="filterthuonghieu" class="title">
                         <div class="item-checkbox" id="item-thuonghieu">
@@ -733,12 +799,12 @@
                                     </li>
                                     <li>
                                         <label id="label-item-search">
-                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="HP">HP
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="ACER">ACER
                                         </label>
                                     </li>
                                     <li>
                                         <label id="label-item-search">
-                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="APPLE">APPLE
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="MSI">MSI
                                         </label>
                                     </li>
                                     <li>
@@ -751,6 +817,16 @@
                                             <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="DELL">DELL
                                         </label>
                                     </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="HP">HP
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label id="label-item-search">
+                                            <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="APPLE">APPLE
+                                        </label>
+                                    </li>                                    
                                 </ul>
                             </div>
                         </div>
@@ -930,17 +1006,15 @@
                         </div>
                     </li>
                 </ul>  
-            </div>
-            <div class="container-search-products">
-                <div id="filter-result"></div>
                 <div class="selling-products">
                     <div class="item-selling-products" id="item-selling-products">  
                     </div>
                 </div>
-                <div id="pagenumber2" style="clear: both;" align="center">
+                <div class="DivPageNumber" id="pagenumber2" style="clear: both;" align="center">
                 </div>
             </div>
         </div>
+        <div id="filter-result"></div>
         <div style="clear: both; height: 120px; background-color: beige;">
             
         </div>
@@ -1082,6 +1156,7 @@
     <script src="../js/Phanloai.js"></script>
     <script src="../js/filterproducts.js"></script>f
     <script src="../js/testphantrang.js"></script>
+    <script src="../js/productInfomation2.js" ></script>
        <script>
         document.getElementById("dangxuat").style.display="none";
         document.getElementById("admin").style.display="none";

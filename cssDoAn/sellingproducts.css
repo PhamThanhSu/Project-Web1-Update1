@@ -268,16 +268,20 @@
 
 /*CSS lọc sản phẩm*/
 .filterproducts{
-    width: 85%;
-    background-color: #66ccff8f;
+    width: 100%;
     margin: auto;
     margin-top: 35px;
 }
 .container-filter{
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    background-color: #66ccffe6;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
     justify-content: space-between;
-    padding: 0px 5px;
+    padding: 0px 0px;
+    box-sizing: border-box;
 }
 .container-filter .title{
     width: 20%;
@@ -321,6 +325,27 @@ li label{
     margin: 12px 0px;
     cursor: pointer;
     font-size: 14px;
+}
+/*CSS CHO PHẦN HIỂN THỊ CHỮ TÌM KIÊM*/
+#innertext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 40px;
+}
+#innertimkiem{
+    font-size: 23px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+#total-products-message{
+    background-color: #ddd;
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
 }
 
 /*CSS cho div gaming */
@@ -484,11 +509,5 @@ li label{
     margin-left: 7.5%;
     justify-content: space-between;
     margin-bottom: 15px;
-    line-height: 40px;
-}
-#total-products-message{
-    background-color: #0000FF;
-    width: 100px;
-    height: 40px;
     line-height: 40px;
 }

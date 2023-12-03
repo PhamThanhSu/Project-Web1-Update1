@@ -1,0 +1,109 @@
+.container{
+    display: flex;
+    height: 800px;
+}
+.left{
+    width: 50%;
+    height: 100%;
+}
+.step-sections{
+    position: relative;
+    z-index: 3;
+}
+.main-content{
+    margin-left: 30px;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+.fieldset {
+    margin: -0.45em;
+    zoom: 1;
+}
+.fieldset .field {
+    width: 100%;
+    float: left;
+    padding: 0.45em;
+    box-sizing: border-box;
+}
+.fieldset .field .field-input-wrapper {
+    position: relative;
+}
+.fieldset .field .field-input-wrapper .field-label {
+    font-size: 0.85714em;
+    font-weight: normal;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0 0.93333em;
+    z-index: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+    pointer-events: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
+    filter: alpha(opacity=0);
+    color: #999999;
+    transition: all 0.2s ease-out;
+    margin: 0.5em 0;
+    margin-top: 0.3em;
+    
+}
+.fieldset .field .field-input-wrapper .field-input {
+    box-shadow: 0 0 0 1px #d9d9d9;
+    transition: all 0.2s ease-out;
+    background-color: white;
+    color: #333333;
+    border-radius: 4px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.94em 2.8em 0.94em 0.8em;
+    word-break: normal;
+}
+.btn {
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 1.4em 1.7em;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    position: relative;
+    background: #338dbc;
+    color: white;
+    width: 200px;
+    margin-left: 250px;
+}
+.step-footer-previous-link{ 
+    margin-left: 320px;
+}
+
+
+
+
+.right{
+    width: 50%;
+    background-color: whitesmoke;
+    height: 100%;
+}
+.sidebar{
+    margin-left: 30px;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+.product-table{
+    width: 100%;
+}
+.total-line-table{
+    margin-left: 500px;
+    margin-top: 50px;
+}
