@@ -15,9 +15,10 @@
     border: none;
     background: none;
     display: flex;
+    align-items: center;
 }
 .cartIcon{
-    flex: 0 0 35px;
+    flex: 0 0 40px;
     width: 35px;
     position: relative;
 }
