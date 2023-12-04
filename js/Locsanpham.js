@@ -160,9 +160,9 @@ var ArrayListProducts = [
         img: "../imageDoAn/vp13.webp",
         doi: "../imageDoAn/vp13.2.webp",
         name: "ASUS VivoBook M513UA-L1221T (R5-5500U | 8GB | 512GB | AMD Radeon Graphics | 15.6' FHD | Win 10)",
-        cpu: "",
-        ram: "",
-        ssd: "",
+        cpu: "AMD Ryzen 3 3500U",
+        ram: "4GB DDR4 3200Mhz",
+        ssd: "256G PCIe NVMe",
         vga: "RTX 3070",
         price: "15,000,000",
         giam: "-20%",
@@ -815,17 +815,17 @@ function FilterListInMenu(mangdaloc, filterthuonghieu = [], filtergiaban = [], f
             }
         }
 
-        if (filtercpu.length > 0 && !filtercpu.some(cpuValue => product.cpu.includes(cpuValue))) {
+        if (filtercpu.length > 0 && !cpu.includes(filtercpu)) {
             continue;
         }
 
-        if (filterssd.length > 0 && !filterssd.some(ssdValue => product.ssd.includes(ssdValue))) {
-            continue;
-        }
+        // if (filterssd.length > 0 && !filterssd.some(ssdValue => product.ssd.includes(ssdValue))) {
+        //     continue;
+        // }
 
-        if (filtervga.length > 0 && !filtervga.some(vgaValue => product.vga.includes(vgaValue))) {
-            continue;
-        }
+        // if (filtervga.length > 0 && !filtervga.some(vgaValue => product.vga.includes(vgaValue))) {
+        //     continue;
+        // }
         if (filterphanloai.length > 0 && !filterphanloai.includes(phanloai)) {
             continue;
         }

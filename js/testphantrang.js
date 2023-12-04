@@ -34,6 +34,7 @@ function showPage(items, paginationContainer) {
         // Nếu không, xóa phân trang cũ
         removePagination();
     }
+
 }
 
 // Hàm tính tổng số trang
