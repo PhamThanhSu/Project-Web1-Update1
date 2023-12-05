@@ -604,6 +604,26 @@ function ListProducts(storedArray) {
     container.innerHTML = s;   
     // Hiển thị tổng số sản phẩm
     document.getElementById('total-products-message').innerText = `Sản phẩm (${totalFilteredProducts})`; 
+    var checkdivproduct = document.querySelector('.selling-products');
+    var checkdivpagenumber = document.getElementById('pagenumber2');
+    var checkinnertext = document.getElementById('filter-result');
+    if (totalFilteredProducts == 0) {
+        if (checkdivproduct) {
+            checkdivproduct.style.display = 'none';
+        }
+        if (checkdivpagenumber) {
+            checkdivpagenumber.style.display = 'none';
+        }
+        checkinnertext.style.display = 'block';
+        checkinnertext.innerText = `Không tìm thấy kết quả phù hợp.`;
+    }
+    else{
+        checkdivproduct.style.display = 'block';
+        checkdivpagenumber.style.display = 'block';
+        checkinnertext.style.display = 'none';
+    }
+//CHECK KIỂM TRA NẾU KHÔNG CÓ SẢN PHẨM SẼ KHÔNG HIỆN NÚT PHÂN TRANG
+var phantrangloc = document.getElementById('pagenumber2');
     const productElements = container.getElementsByClassName("itemproduct");
     for (let i = 0; i < productElements.length; i++) {
     let listItem = productElements[i];
@@ -677,7 +697,7 @@ var Btnsearch = document.getElementById('btn-search');
     Btnsearch.addEventListener('click', function (event) {
     document.getElementById('container-none-filter').style.display = 'none';
     document.getElementById('container-filter-search').style.display = 'block';
-    document.getElementById('filterthuonghieu').style.display = 'none';
+    //document.getElementById('filterthuonghieu').style.display = 'none';
     document.getElementById('innertimkiem').innerText = `TÌM KIẾM`;
     event.preventDefault(); // Ngăn chặn sự kiện mặc định của form
     var Value = document.getElementById('search');

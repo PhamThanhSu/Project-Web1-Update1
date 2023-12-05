@@ -31,9 +31,14 @@ function showPage(items, paginationContainer) {
     if (calculateTotalPages(items) > 1) {
         renderPagination(items, paginationContainer);
     } else {
-        // Nếu không, xóa phân trang cũ
-        removePagination();
+         // Nếu không, xóa phân trang cũ
+         removePagination();
     }
+    
+    // var checkproducts = document.getElementById('itemproduct');
+    // if(!checkproducts){
+    //     phantrangloc.style.display = 'none';
+    // }
 
 }
 
@@ -56,7 +61,6 @@ function renderPagination(items, paginationContainer) {
     const totalItems = items.length;
     // Tính tổng số trang
     const totalPages = Math.ceil(totalItems / itemsPerPage);
-
     // Xóa nội dung của container phân trang
     paginationContainer.innerHTML = '';
 
@@ -84,6 +88,7 @@ function renderPagination(items, paginationContainer) {
     }
 }
 thisPageloc = document.querySelectorAll('.item-selling-products .itemproduct');
+console.log(thisPageloc.length);
     var phantrangloc = document.getElementById('pagenumber2');
     showPage(thisPageloc, phantrangloc);
 // Ví dụ sử dụng cho phân trang gaming

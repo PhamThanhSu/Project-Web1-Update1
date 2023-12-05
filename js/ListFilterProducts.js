@@ -74,9 +74,29 @@ function ListSellingProductFilter(mangdaloc, filterthuonghieu = [], filtergiaban
             </div>`;   
             totalFilteredProducts++;
     }
+    localStorage.setItem('totalFilteredProducts', JSON.stringify(totalFilteredProducts));
     container.innerHTML = s;  
     // Hiển thị tổng số sản phẩm
     document.getElementById('total-products-message').innerText = `Sản phẩm (${totalFilteredProducts})`;
+    var checkdivproduct = document.querySelector('.selling-products');
+    var checkdivpagenumber = document.getElementById('pagenumber2');
+    var checkinnertext = document.getElementById('filter-result');
+    if (totalFilteredProducts == 0) {
+        if (checkdivproduct) {
+            checkdivproduct.style.display = 'none';
+        }
+        if (checkdivpagenumber) {
+            checkdivpagenumber.style.display = 'none';
+        }
+        checkinnertext.style.display = 'block';
+        checkinnertext.innerText = `Không tìm thấy kết quả phù hợp.`;
+    }
+    else{
+        checkdivproduct.style.display = 'block';
+        checkdivpagenumber.style.display = 'block';
+        checkinnertext.style.display = 'none';
+    }
+    
     const productElements = container.getElementsByClassName("itemproduct");
     for (let i = 0; i < productElements.length; i++) {
     let listItem = productElements[i];
@@ -91,7 +111,6 @@ function ListSellingProductFilter(mangdaloc, filterthuonghieu = [], filtergiaban
     thisPageloc = document.querySelectorAll('.item-selling-products .itemproduct');
     var phantrangloc = document.getElementById('pagenumber2');
     showPage(thisPageloc, phantrangloc);
-
     var elements = document.querySelectorAll('.anh');
     elements.forEach(function (element) {
       handleImageHover(element);
