@@ -99,7 +99,7 @@ var ArrayListProducts = [
     },
     {
         id:"0009",
-        thuonghieu:"Hp",
+thuonghieu:"Hp",
         phanloai:"gaming",
         img: "../imageDoAn/vp9.jpg",
         doi: "../imageDoAn/vp9.2.jpg",
@@ -198,7 +198,7 @@ var ArrayListProducts = [
     {
         id:"0016",
         thuonghieu:"Lenovo",
-        phanloai:"dohoa",
+phanloai:"dohoa",
         img: "../imageDoAn/dh10.webp",
         doi: "../imageDoAn/dh11.webp",
         name: "Lenovo LOQ 2023 15IRH8 Core™ I5-13420H, RAM 8GB, SSD 1TB, RTX 3050, FHD",
@@ -291,7 +291,7 @@ var ArrayListProducts = [
         ssd: "512GB Pcie",
         vga: "RTX3050 4GB",
         price: "22,990,000",
-        giam: "-20%",
+giam: "-20%",
     },
     {
         id:"0023",
@@ -303,7 +303,7 @@ var ArrayListProducts = [
         cpu: "AMD Ryzen R5 6600H",
         ram: "16GB DDR5",
         ssd: "512G PCIe M.2",
-        vga: "RTX 3050Tis",
+        vga: "RTX 3050Ti",
         price: "26,500,000",
         giam: "-20%",
     },
@@ -383,7 +383,7 @@ var ArrayListProducts = [
         phanloai:"doanhnhan",
         img: "../imageDoAn/dn3.png",
         doi: "../imageDoAn/dn3.2.png",
-        name: "ASUS ZenBook 14 Flip OLED UP3404VA-KN039W (I7-1360P | 16GB | 512GB | Intel Iris Xe Graphics | 14' WQXGA+ OLED 100% DCI-P3 Touch | Win 11)",
+name: "ASUS ZenBook 14 Flip OLED UP3404VA-KN039W (I7-1360P | 16GB | 512GB | Intel Iris Xe Graphics | 14' WQXGA+ OLED 100% DCI-P3 Touch | Win 11)",
         cpu: "Intel Core i7 1360P",
         ram: "16G DDR5 4800Mhz",
         ssd: "512 PCIe NVMe",
@@ -465,7 +465,7 @@ var ArrayListProducts = [
         id:"0035",
         thuonghieu:"Asus",
         phanloai:"doanhnhan",
-        img: "../imageDoAn/dn8.png",
+img: "../imageDoAn/dn8.png",
         doi: "../imageDoAn/dn8.2.png",
         name: "Asus Zenbook Q409ZA Core™ I5-1240P RAM 8GB SSD 256GB OLED",
         cpu: "Intel Core i5 1240P",
@@ -615,7 +615,7 @@ function ListProducts(storedArray) {
             checkdivpagenumber.style.display = 'none';
         }
         checkinnertext.style.display = 'block';
-        checkinnertext.innerText = `Không tìm thấy kết quả phù hợp.`;
+checkinnertext.innerText = `Không tìm thấy kết quả phù hợp.`;
     }
     else{
         checkdivproduct.style.display = 'block';
@@ -678,7 +678,7 @@ function searchProducts(searchValue) {
     // Lọc sản phẩm dựa trên giá trị tìm kiếm
     const searchResults = storedArray.filter(product => product.name.toLowerCase().includes(storedSearchValue));
     if (searchResults.length > 0) {
-        ListProducts(searchResults);
+ListProducts(searchResults);
         document.getElementById('innertimkiem').innerHTML = `TÌM KIẾM`;
         // Hiển thị kết quả tìm kiếm
         document.getElementById('innertextketqua').innerHTML = `Tìm kiếm theo <b>${searchValue}</b>`;
@@ -719,7 +719,7 @@ function DanhMucLapTop(element) {
     };
     // Lấy giá trị của thuộc tính 'value' từ thẻ <a> được nhấp
     var filterValue = element.getAttribute("value");
-
+   
     // So sánh mảng các mục cần tìm
     if (['1', '2', '3', '4'].includes(filterValue)) {
         filter.price = filterValue;
@@ -733,11 +733,14 @@ function DanhMucLapTop(element) {
     //Mảng các hãng sản phẩm để lọc sau khi chọn theo từng hãng
     const BrandArray = filter.brand ? [filter.brand] : ['ASUS', 'ACER', 'MSI', 'LENOVO', 'DELL', 'HP', 'APPLE'];
     localStorage.setItem('BrandArray', JSON.stringify(BrandArray));
+    localStorage.setItem('BrandArray', JSON.stringify(BrandArray));
     MakeLi(BrandArray);
+    MakeLi2(BrandArray);
+    localStorage.setItem('filter',JSON.stringify(filter));
     //console.log(filter.brand);
     localStorage.setItem('filterBrand', JSON.stringify(filter.brand));
     localStorage.setItem('filterPrice', JSON.stringify(filter.price));
-    localStorage.setItem('filterVga', JSON.stringify(filter.vga));
+localStorage.setItem('filterVga', JSON.stringify(filter.vga));
     localStorage.setItem('filterSsd', JSON.stringify(filter.ssd));
     localStorage.setItem('filterCpu', JSON.stringify(filter.cpu));
     localStorage.setItem('filterPhanloai', JSON.stringify(filter.phanloai));
@@ -794,12 +797,18 @@ function DanhMucLapTop(element) {
     } else {
         document.getElementById('container-filter-search').style.display = 'none';
         // Hiển thị thông báo lỗi
-        document.getElementById('filter-result').innerText = `Không tìm thấy kết quả phù hợp.`;
+document.getElementById('filter-result').innerText = `Không tìm thấy kết quả phù hợp.`;
     }
     
 }
 // Gán sự kiện nhấp chuột cho tất cả các thẻ <a> có lớp là 'sub-megamenu-item-filter'
 var filterLinks = document.querySelectorAll('.sub-megamenu-item-filter');
+filterLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+        DanhMucLapTop(this);
+    });
+});
+var filterLinks = document.querySelectorAll('.textphanloai');
 filterLinks.forEach(function(link) {
     link.addEventListener('click', function() {
         DanhMucLapTop(this);
@@ -814,23 +823,23 @@ function FilterListInMenu(mangdaloc, filterthuonghieu = [], filtergiaban = [], f
         var cpu = product.cpu;
         var ssd = product.ssd;
         var vga = product.vga;
-        var price = removeCommas(product.price);
+        var price = product.price;
         
         if (filterthuonghieu.length > 0 && !filterthuonghieu.includes(thuonghieu)) {
             continue;
         }
-
+        console.log(removeCommas(price));
         if (filtergiaban.length > 0) {
-            if (price < 10000000 && !filtergiaban.includes('1')) {
+            if (removeCommas(price) < 10000000 && !filtergiaban.includes('1')) {
                 continue;
             }
-            if (price >= 10000000 && price <= 15000000 && !filtergiaban.includes('2')) {
+            if (removeCommas(price) >= 10000000 && removeCommas(price) <= 15000000 && !filtergiaban.includes('2')) {
                 continue;
             }
-            if (price > 15000000 && price <= 25000000 && !filtergiaban.includes('3')) {
+            if (removeCommas(price) > 15000000 && removeCommas(price) <= 25000000 && !filtergiaban.includes('3')) {
                 continue;
             }
-            if (price > 25000000 && !filtergiaban.includes('4')) {
+            if (removeCommas(price) > 25000000 && !filtergiaban.includes('4')) {
                 continue;
             }
         }
@@ -864,8 +873,26 @@ function FilterListInMenu(mangdaloc, filterthuonghieu = [], filtergiaban = [], f
 /// Lấy dữ liệu từ local storage và chuyển đổi thành đối tượng JavaScript
 
 BrandArray = JSON.parse(localStorage.getItem('BrandArray'));
+//HÀM TẠO CÁC CHECKBOX THƯƠNG HIỆU TRONG BỘ LỌC NÂNG CAO
 function MakeLi(BrandArray) {
     console.log(BrandArray);
+    //TẠO ĐẾN Ô FORM LỌC NÂNG CAO
+    var listFilterElements = document.querySelector('.listcheckbox2');
+    var listfilterpro = '';
+    for (var i = 0; i < BrandArray.length; i++) {
+        // Tạo chuỗi HTML cho danh sách các thương hiệu
+        console.log(BrandArray[i]);
+        listfilterpro += `
+        <input type="checkbox" class="thuonghieu" id="brand-${BrandArray[i]}" value="${BrandArray[i]}" onclick="changeColor(this);">
+        <label for="brand-${BrandArray[i]}">${BrandArray[i]}</label>`;
+    }
+     // Gán chuỗi HTML vào tất cả các phần tử có class="thuonghieu"
+     listFilterElements.innerHTML = listfilterpro;
+    
+}
+function MakeLi2(BrandArray){
+     //
+    //TẠO ĐẾN LIST CHECKBOX
     var listCheckboxElements = document.querySelector('.listcheckbox');
     var listbrandfilter = '';
     for (var i = 0; i < BrandArray.length; i++) {
@@ -915,45 +942,27 @@ checkboxLists.forEach(function(checkbox) {
         // Nếu người dùng click vào một thao tác khác, áp dụng lại phân trang
         if (clickedElement.id !== 'total-products-message' && showAllProductsEnabled) {
             // Hiển thị lại phân trang
-            paginationElement.style.display = 'block';
+            var checkdivproduct = document.querySelector('.selling-products');
+    var checkdivpagenumber = document.getElementById('pagenumber2');
+    var checkinnertext = document.getElementById('filter-result');
+    if (totalFilteredProducts == 0) {
+        if (checkdivproduct) {
+            checkdivproduct.style.display = 'none';
+        }
+        if (checkdivpagenumber) {
+            checkdivpagenumber.style.display = 'none';
+        }
+        checkinnertext.style.display = 'block';
+        checkinnertext.innerText = `Không tìm thấy kết quả phù hợp.`;
+    }
+    else{
+        checkdivproduct.style.display = 'block';
+        checkdivpagenumber.style.display = 'block';
+        checkinnertext.style.display = 'none';
+    }
+    
             // Cập nhật trạng thái hiện tại
             showAllProductsEnabled = false;
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-quanlydonhang();
+
 function quanlydonhang()
 {
     var bill=JSON.parse(localStorage.getItem('bill'));
@@ -10,6 +10,7 @@ function quanlydonhang()
     <th>Tổng tiền</th>
     <th>Ngày mua hàng</th>
     <th>Tình trạng đơn hàng</th>
+
    
 </tr>`;
 
@@ -18,20 +19,22 @@ function quanlydonhang()
                                 <td>${bill[i].id} </td>
                                 <td>${bill[i].email}</td>
                                 <td> <button onclick="xemchitiet(${bill[i].id})"> Chi tiết </button> </td>
-                                <td>${formatCurrency(bill[i].tonghoadon)}</td>
+                                <td>${formatCurrency(bill[i].total)}</td>
                                 <td>${bill[i].date}</td>
                                 <td style="color :red; font-weight:bold">  ${bill[i].status} 
                                 <button type="submit" onclick= "daxuly(${bill[i].id})" style="margin-right: 10px " > Đã xử lý </button> 
                                 <button type="submit" onclick= "chuaxuly(${bill[i].id})" style="margin-right: 10px"> Chưa xử lý </button> 
+                                <button type="button" onclick="xoaHoaDonById(${bill[i].id})" style="margin-right: 10px>Xóa</button>
                                 </td>
                             </tr>`;
                 }
                 document.getElementById("quanlyhoadon").innerHTML = qlydonhang;
+           
 }
 function xemchitiet(id)
 {   var tongfull=0;
     var detailbill = document.getElementById('detailbill');
-    detailbill.style.display = 'block';
+     detailbill.style.display = 'block';
     var bills=JSON.parse(localStorage.getItem('bill'));
     var billindex=bills.findIndex( bill => bill.id === id);
     var chitiet=` </tr>
@@ -41,16 +44,16 @@ function xemchitiet(id)
     <th>Số lượng</th>
     <th>Đơn giá</th> 
 </tr>`;
-    for (let i=0; i<bills[billindex].donhang.length; i++)  {
+    for (let i=0; i<bills[billindex].list.length; i++)  {
         var total=0;
-        total+=parseInt(bills[billindex].donhang[i].price.replace(/\D/g, ''))*bills[billindex].donhang[i].quantity;
+        total+=parseInt(bills[billindex].list[i].price.replace(/\D/g, ''))*bills[billindex].list[i].quantity;
         tongfull+=total;
         var total1=formatCurrency(total)
    chitiet+=`<tr>
-    <td>${bills[billindex].donhang[i].name} </td>
-    <td>${bills[billindex].donhang[i].hang}</td>
-    <td>${bills[billindex].donhang[i].price}</td>
-    <td>${bills[billindex].donhang[i].quantity}</td>
+    <td>${bills[billindex].list[i].name} </td>
+    <td>${bills[billindex].list[i].hang}</td>
+    <td>${bills[billindex].list[i].price}</td>
+    <td>${bills[billindex].list[i].quantity}</td>
     <td>${total1} </td>
 
 </tr>`;
@@ -99,10 +102,11 @@ function chuaxuly(id)
     quanlydonhang();
 }
 }
-
 function filterByDate() {
     var datestart = getFormattedDate(document.getElementById("datestart").value);
     var dateend=getFormattedDate(document.getElementById("dateend").value);
+    console.log(datestart);
+    console.log(dateend);
     
     if (datestart>dateend) {alert("Ngày bắt đầu không được sau ngày kết thúc"); return;}
     if (datestart&&dateend) {
@@ -111,7 +115,7 @@ function filterByDate() {
      
         displayFilteredOrders(filteredOrders);
     } else {
-        // If no date is selected, display all orders
+     
         quanlydonhang();
     }
 }
@@ -132,7 +136,7 @@ function displayFilteredOrders(filteredOrders)
             <td>${filteredOrders[i].id}</td>
             <td>${filteredOrders[i].email}</td>
             <td><button onclick="xemchitiet(${filteredOrders[i].id})">Chi tiết</button></td>
-            <td>${formatCurrency(filteredOrders[i].tonghoadon)}</td>
+            <td>${formatCurrency(filteredOrders[i].total)}</td>
             <td>${filteredOrders[i].date}</td>
             <td style="color:red; font-weight:bold">${filteredOrders[i].status}
                 <button type="submit" onclick="daxuly(${filteredOrders[i].id})" style="margin-right: 10px">Đã xử lý</button>
@@ -158,12 +162,11 @@ function getOrdersInDateRange(startDate, endDate) {
 
 function getFormattedDate(dateString) {
     var date = new Date(dateString);
-    // Get day, month, and year
+
     var day = date.getDate();
     var month = date.getMonth() + 1; 
     var year = date.getFullYear();
     
-    // Format the date as DD/MM/YYYY
     var formattedDate = `${day}/${month}/${year}`;
     
     return formattedDate;
@@ -172,54 +175,95 @@ function getFormattedDate(dateString) {
 function thongKeDoanhSoTrong1Tuan() {
     var startDate =getFormattedDate(document.getElementById("datestart2").value);
     var endDate = getFormattedDate(document.getElementById("dateend2").value);
+    
+
 
     var allOrders = getOrdersInDateRange(startDate, endDate);
     var doanhSo = 0;
 
     for (let i = 0; i < allOrders.length; i++) {
-        doanhSo += allOrders[i].tonghoadon;
-    }
-    for (let i = 0; i < allOrders.length; i++) {
-        console.log(`Date: ${allOrders[i].date}, Revenue: ${formatCurrency(allOrders[i].tonghoadon)}`);
+        doanhSo += allOrders[i].total;
     }
 
-    console.log(doanhSo);
-    return formatCurrency(doanhSo);
-}
+    var intongdoanhso = `  <h2> Doanh số từ ngày ${getFormattedDate(startDate)} tới ngày ${getFormattedDate(endDate)} là ${formatCurrency(doanhSo)}</h2> `;
+    document.getElementById("tongdoanhso").innerHTML=intongdoanhso;
+    }
+   
 
+quanlydonhang();
 function thongKedoanhsotheohang1tuan(firms) {
-    var endDate = new Date();
-    var startDate= new Date(endDate.getTime());
-    startDate.setDate(endDate.getDate()-7)
+    var endDate = document.getElementById("dateend2").value;
+    var startDate= document.getElementById("datestart2").value;
     endDate=getFormattedDate(endDate);
     startDate=getFormattedDate(startDate);
+    console.log(endDate);
+    console.log(startDate);
     var allOrders = getOrdersInDateRange(startDate, endDate);
     var TongTienTheoFirm = {};
+    var TongsoluongtheoFirm={}
+;
 
-var endDate = new Date();
-
-    // Initialize the quantities for each firm to 0
     firms.forEach(firm => {
        TongTienTheoFirm[firm] = 0;
+       TongsoluongtheoFirm[firm]=0;
     });
 
     for (let i = 0; i < allOrders.length; i++) {
-        for (let j = 0; j < allOrders[i].donhang.length; j++) {
-            var hang = allOrders[i].donhang[j].hang;
-            // Check if the hang is in the list of firms
+        for (let j = 0; j < allOrders[i].list.length; j++) {
+            var hang = allOrders[i].list[j].hang;
+          
             if (firms.includes(hang)) {
-                TongTienTheoFirm[hang] += parseInt(allOrders[i].donhang[j].price.replace(/\D/g, ''))*allOrders[i].donhang[j].quantity;
+                TongTienTheoFirm[hang] += parseInt(allOrders[i].list[j].price.replace(/\D/g, ''))*allOrders[i].list[j].quantity;
+                TongsoluongtheoFirm[hang] += parseInt(allOrders[i].list[j].quantity);
             }
         }
     }
-    return TongTienTheoFirm;
-    
-}
+    var tableHtml = `  <h2 > Doanh số theo hãng từ ngày ${getFormattedDate(startDate)} tới ngày ${getFormattedDate(endDate)} </h2>
+                        <tr>
+                            <th>Hãng</th>
+                            <th>Số lượng bán được</th>
+                            <th>Doanh số bán</th>
+                        </tr>`;
 
-// Example usage
+    firms.forEach(firm => {
+        tableHtml += ` 
+        <tr>
+                        <td>${firm}</td>
+                        <td>${TongsoluongtheoFirm[firm]}</td>
+                        <td>${formatCurrency(TongTienTheoFirm[firm])}</td>
+                      </tr>`;
+    });
+
+  
+
+ 
+    document.getElementById("quanlydoanhso").innerHTML = tableHtml
+} 
+
+
 var firms = ['Asus', 'Acer', 'Lenovo', 'MSI', 'DELL', 'Hp'];
 var tongtientheongay;
 
 var result = thongKedoanhsotheohang1tuan(firms);
 console.log(result);
 
+function thongKe(){
+    var startDate =getFormattedDate(document.getElementById("datestart2").value);
+    var endDate = getFormattedDate(document.getElementById("dateend2").value);
+    
+    if (startDate>endDate) {alert("Ngày bắt đầu không được sau ngày kết thúc"); return;}
+    thongKeDoanhSoTrong1Tuan();
+    thongKedoanhsotheohang1tuan(firms);
+
+}
+
+
+function xoaHoaDonById(id) {
+    var result = confirm("Bạn có chắc muốn xóa hóa đơn có ID " + id + " không?");
+    if (result) {
+        var bills = JSON.parse(localStorage.getItem('bill')) || [];
+        var updatedBills = bills.filter(bill => bill.id !== id);
+        localStorage.setItem('bill', JSON.stringify(updatedBills));
+        quanlydonhang(); // Refresh the order management table
+    }
+}
