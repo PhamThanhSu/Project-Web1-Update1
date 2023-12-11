@@ -131,3 +131,15 @@
     display: flex;
     justify-content: space-between;
 }
+.popup-container {
+    display: none;
+    position: fixed;
+    width: 60%;
+    top: calc(50% - 305px);
+    left: calc(50% + 50px);
+    transform: translate(-50%, -50%);
+    background-color: gray;
+    padding: 20px;
+    border: 1px solid white;
+    z-index: 100;
+}

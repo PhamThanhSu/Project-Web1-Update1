@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin: 25px;
+    width: 20%;
 }
 
 .bottom_header_transition p:hover{
@@ -55,12 +55,5 @@
     margin-top: 8px;
 }
 
-/*CSS HTML Products*/
-.container-bottom{
-    display: flex;
-    justify-content: center;
-}
-.cartIcon img {
-    filter: brightness(0) invert(1);
-}
+
 

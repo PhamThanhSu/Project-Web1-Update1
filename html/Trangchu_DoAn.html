@@ -20,8 +20,14 @@
     <link rel="stylesheet" href="../cssDoAn/listlaptop.css">
     <link rel="stylesheet" href="../cssDoAn/listncsd.css">
     <link rel="stylesheet" href="../cssDoAn/listdaquasudung.css">
+    <link rel="stylesheet" href="../cssDoAn/productInfomation.css">
+    <link rel="stylesheet" href="../cssDoAn/timkiemnangcao.css">
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <style>
+
+    #total-products-message{
+        cursor: pointer;
+    }        
         
         .thongtin{
     width: 25%;
@@ -274,17 +280,23 @@
                                 </span>        
                             </a>
                         </li>
-                        <li class="list-menu-header-item">
-                            <div id="button-cart" style="display: flex; align-items: center; width: 100px;">
-                                <span class="box-icon-topmenu" id="color-icon"> 
-                                    <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
+                        
+                        <li class="list-menu-header-item" id="menuHeaderItem">
+                            <button class="cartButton" onclick="toggleDropdown()">
+                                <span class="cartIcon">								
+                                    <img style="max-width: 100%; vertical-align: middle;" width="32" height="28" src="../imageDoAn/giohang.png" alt="Hệ thống cửa hàng">
+                                    <span class="cartNumber">0</span>
                                 </span>
-                                <span class="box-text">
+                                <span class="cartTittle" style="font-size: 18px;">
                                     Giỏ hàng
-                                <span class="small-text">Cart</span>
-                                </span> 
-                            </div>
-                            <div class="header-action_dropdown" id="dropdownContent" style="display: none;">
+                                </span>		
+                                <span class="CartBox">
+                                    <svg viewBox="0 0 20 9" role="presentation">
+                                        <path d="M.47108938 9c.2694 725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff"></path>
+                                    </svg>
+                                </span>
+                            </button> 
+                            <div class="header-action_dropdown" id="dropdownContent" style="z-index: 9999; display:none;">
                                 <div class="header-dropdown_content">
                                     <div class="overflow-hidden relative-position">
                                         <div class="account_header text-center">
@@ -315,7 +327,7 @@
                                                         <tr>
                                                             <td style="width: 23.33%;" class="td1"></td>
                                                             <td style="width: 53.33%; text-align: center;" class="tdMain">
-                                                                <a href="/checkout" class="checkoutBtn" >THANH TOÁN</a>
+                                                                <a onclick="generateBill()" class="checkoutBtn" >THANH TOÁN</a>
                                                             </td>
                                                             <td style="width: 23.33%;" class="td1"></td>
                                                         </tr>
@@ -326,24 +338,62 @@
                                     </div>
                                 </div>
                             </div> 
-                        </li>
+                     
+                        </li>  
                         <li class="list-menu-header-item">
-                                
-                        </li>
-                        <div class="form-cart-container" id="test">
-                            <div class="login-popup-cart" id="login-popup-cart">
-                            </div>
-                            <div class="login-content-cart" id="login-content-cart">
-                                <div class="formcart">
-                                    <!-- Nội dung của cửa sổ đăng nhập ở đây -->
-                                    <!-- Bạn có thể thêm các trường nhập, nút Đăng nhập, và nội dung khác -->
-                                    <div class="giohang">
-                                        <h2>GIỎ HÀNG</h2>
-                                    </div>
-                                    
+                            <a style="display: flex; align-items: center; width: 105px;" onclick="toggleDropdown1()">
+                                <span class="box-icon-topmenu" id="color-icon">								
+                                    <img width="24" height="24" src="../imageDoAn/donhang.png" alt="Đơn hàng">
+                                </span>
+                                <span class="box-text">
+                                    Tra cứu
+                                    <span class="small-text">đơn hàng</span>
+                                </span>   
+                            </a>
+                            <div class="popup-container" id="popupContainer" >
+                                <div class="popup-content" id="popupContent">
+                                    <table class="tablexembill" id="xembill" style="color: white ;   border: 2px solid red    ">
+                                    <thead>
+                                        <tr> 
+                                            <th>Email</th>
+                                            <th>Xem chi tiet</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Ngày mua hàng</th>
+                                            <th>Tình trạng đơn hàng</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                    <div id="detailbill" class="modal">
+                                        <!-- Bảng chỉnh sửa -->
+                                        <div class="modal-content">
+                                            <span class="close" onclick="closedetailbill()">&times;</span>
+                                            <table class="tablechitiet" style="width: 100%;" id="chitiethoadon1">
+                                            </thead>
+                                            </tr>
+                                                <th>Tên sản phẩm</th>
+                                                <th>Hãng</th>
+                                                <th>Giá tiền</th>
+                                                <th>Số lượng</th>
+                                                <th>Đơn giá</th> 
+                                            </tr>
+                                            </thead>
+                                            </table>
+                                            </div>
+                                            </div>
+                                    <!-- Content of the popup -->
+                                    <!-- You can put the content you want to show here -->
+                                    <!-- For example, input fields to search for orders -->
                                 </div>
                             </div>
-                        </div>
+                            <div class="form-cart-container" id="test">
+                                <div class="login-popup-cart" id="login-popup-cart" style="display: none;">
+                                </div>
+                                
+                            </div>
+                        </li>
+                        
+                        <!-- Popup container -->
+                       
                      <li class="list-menu-header-item">
                                     <button type="submit" class="btn-login" id="button-login" style="width: 95px;">
                                         <span  id="admin"  class="box-text"> <a href="../html/Layout admin.html">  Admin </span></a>
@@ -353,7 +403,8 @@
                                 </li>
                             </ul>
                     </div>
-                </div>
+                    </div>
+
             <div class="bottom_header">
                 <div class="container">
                     <div class="menu_bottomheader">
@@ -401,7 +452,7 @@
                             <li class="MenuC">
                                 <a class="list-menu-leftshow">
                                     <span class="box-icon" id=""> 
-                                        <img width="24" height="24" href="../html/Trangchu_DoAn.html" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
+                                        <img width="24" height="24" src="../imageDoAn/giohang.png" alt="Giỏ hàng">                             
                                     </span>
                                     <p id="menuright_bottom" class="box-text">Trang chủ</p> 
                                     <span class="megamenu-ic-right">
@@ -495,7 +546,7 @@
                                     <a class="sub-megamenu-item-filter" id="test" href="#"  value="LENOVO">LENOVO</a>		
                                     <a class="sub-megamenu-item-filter" id="test" href="#"  value="DELL">DELL</a>		
                                     <a class="sub-megamenu-item-filter" id="test" href="#" value="HP">HP</a>		
-                                    <a class="sub-megamenu-item-filter" id="test" href="#"  value="APPLE">APPLE</a>		
+                                    <a class="sub-megamenu-item-filter" id="test" href="#"  value="LG">LG</a>		
                                 </div>
                                 <div class="sub-megamenu-item smg-2">
                                     <a class="sub-megamenu-item-name" href="#">Giá bán</a>	
@@ -771,7 +822,114 @@
                         <div id="innertimkiem"></div>
                         <div id="innertextketqua" class="result-text"></div>
                     </div>
-                    <div id="total-products-message" class="result-text"></div>
+                    <div style="display: flex; align-items: flex-end; margin-bottom: 10px;">
+                        <div id="total-products-message" class="result-text"></div>
+                    <!--TÌM KIẾM NÂNG CAO-->
+                        <div id="button-boloc">
+                            <span class="box-icon-timkiemnangcao" id="box-icon-timkiemnangcao">								
+                                <img width="20" height="20" src="../imageDoAn/filter.png" alt="Tìm kiếm nâng cao">
+                            </span>
+                            <p> Bộ lọc </p>
+                        </div>
+                    </div>
+                    <!--DIV BẢNG BỘ LỌC TÌM KIẾM NÂNG CAO-->
+                    <div class="container-timkiemnangcao" id="container-timkiemnangcao">
+                        <label id="closeboloc" style="float: right; cursor: pointer;">Đóng</label>
+                        <h2 style="text-align: center;">Tìm Kiếm Nâng Cao</h2>
+                        <form id="advanced-search-form">
+                            <h3>Thương hiệu</h3>
+                            <div id="brand-buttons" class="listcheckbox2">
+                                <!-- Danh sách các nút button -->
+                                <input type="checkbox" class="thuonghieu" id="brand-ASUS" value="ASUS" onclick="changeColor(this);">
+                                <label for="brand-ASUS">ASUS</label>                               
+                                <input type="checkbox" class="thuonghieu" id="brand-ACER" value="ACER" onclick="changeColor(this);">
+                                <label for="brand-ACER">ACER</label>
+                                <input type="checkbox" class="thuonghieu" id="brand-HP" value="HP" onclick="changeColor(this);">
+                                <label for="brand-HP">HP</label>                               
+                                <input type="checkbox" class="thuonghieu" id="brand-MSI" value="MSI" onclick="changeColor(this);">
+                                <label for="brand-MSI">MSI</label>
+                                <input type="checkbox" class="thuonghieu" id="brand-LENOVO" value="LENOVO" onclick="changeColor(this);">
+                                <label for="brand-LENOVO">LENOVO</label>                               
+                                <input type="checkbox" class="thuonghieu" id="brand-APPLE" value="APPLE" onclick="changeColor(this);">
+                                <label for="brand-APPLE">APPLE</label>
+                                <input type="checkbox" class="thuonghieu" id="brand-DELL" value="DELL" onclick="changeColor(this);">
+                                <label for="brand-DELL">DELL</label>                             
+                            </div>
+                            <h3>Tìm kiếm theo khoảng giá</h3>
+                            <div class="container-textprice" class="listcheckbox2">                                
+                                <div>
+                                    <input type="text" class="gia" id="price-min" min="0" step="500000" placeholder="Giá thấp nhất" aria-label="Search">
+                                </div>                 
+                                <div>
+                                    <input type="text"  class="gia" id="price-max" min="0" step="500000" placeholder="Giá cao nhất" aria-label="Search">
+                                </div>
+                            </div>    
+                            <div class="container-cpu-ssd">
+                            <div class="container-cpu" class="listcheckbox2">
+                                <h3>CPU</h3>
+                                <div id="cpu-buttons">
+                                    <!-- Danh sách các nút button -->
+                                    <input type="checkbox" class="cpu" id="cpu-IntelCorei3" value="Intel Core i3" onclick="changeColor(this);">
+                                    <label for="cpu-IntelCorei3">Intel Core i3</label>                               
+                                    <input type="checkbox" class="cpu" id="cpu-IntelCorei5" value="Intel Core i5" onclick="changeColor(this);">
+                                    <label for="cpu-IntelCorei5">Intel Core i5</label>       
+                                    <input type="checkbox" class="cpu" id="cpu-IntelCorei7" value="Intel Core i7" onclick="changeColor(this);">
+                                    <label for="cpu-IntelCorei7">Intel Core i7</label>   
+                                    <input type="checkbox" class="cpu" id="cpu-IntelCorei9" value="Intel Core i9" onclick="changeColor(this);">
+                                    <label for="cpu-IntelCorei9">Intel Core i9</label>           
+                                    <input type="checkbox" class="cpu" id="cpu-AMDRyzen" value="AMD Ryzen" onclick="changeColor(this);">
+                                    <label for="cpu-AMDRyzen">AMD Ryzen</label>                                      
+                                    <input type="checkbox" class="cpu" id="cpu-Xeon" value="Xeon" onclick="changeColor(this);">
+                                    <label for="cpu-Xeon">Xeon</label>                            
+                                </div>
+                            </div>
+                            <div class="container-ssd" class="listcheckbox2">
+                                <h3>SSD</h3>
+                                <div id="ssd-buttons">
+                                    <!-- Danh sách các nút button -->
+                                    <input type="checkbox" class="ssd" id="ssd-256" value="256" onclick="changeColor(this);">
+                                    <label for="ssd-256">256GB</label>                               
+                                    <input type="checkbox" class="ssd" id="ssd-512" value="512" onclick="changeColor(this);">
+                                    <label for="ssd-512">512GB</label>    
+                                    <input type="checkbox" class="ssd" id="ssd-1TB" value="1TB" onclick="changeColor(this);">
+                                    <label for="ssd-1TB">1TB</label>    
+                                    <input type="checkbox" class="ssd" id="ssd-2TB" value="2TB" onclick="changeColor(this);">
+                                    <label for="ssd-2TB">2TB</label>                           
+                                </div>
+                            </div>
+                            </div>
+                            <h3>VGA</h3>
+                            <div id="vga-buttons" class="listcheckbox2">
+                                <!-- Danh sách các nút button -->
+                                <input type="checkbox" class="vga" id="vga-RTX3050" value="RTX3050" onclick="changeColor(this);">
+                                <label for="vga-RTX3050">RTX3050</label>                               
+                                <input type="checkbox" class="vga" id="vga-RTX3050Ti" value="RTX3050 Ti" onclick="changeColor(this);">
+                                <label for="vga-RTX3050Ti">RTX3050 Ti</label> 
+                                <input type="checkbox" class="vga" id="vga-RTX3060" value="RTX3060" onclick="changeColor(this);">
+                                <label for="vga-RTX3060">RTX3060</label>   
+                                <input type="checkbox" class="vga" id="vga-RTX305=70" value="RTX3070" onclick="changeColor(this);">
+                                <label for="vga-RTX3070">RTX3070</label>   
+                                <input type="checkbox" class="vga" id="vga-RTX 3070Ti" value="RTX 3070 Ti" onclick="changeColor(this);">
+                                <label for="vga-RTX 3070Ti">RTX 3070 Ti</label>   
+                                <input type="checkbox" class="vga" id="vga-RTX4050" value="RTX 4050" onclick="changeColor(this);">
+                                <label for="vga-RTX4050">RTX 4050</label>   
+                                <input type="checkbox" class="vga" id="vga-RTX4060 " value="RTX 4060 " onclick="changeColor(this);">
+                                <label for="vga-RTX4060 ">RTX 4060 </label>   
+                                <input type="checkbox" class="vga" id="vga-RTX4070 " value="RTX 4070 " onclick="changeColor(this);">
+                                <label for="vga-RTX4070 ">RTX 4070 </label>   
+                                <input type="checkbox" class="vga" id="vga-Iris" value="Iris" onclick="changeColor(this);">
+                                <label for="vga-Iris">Iris</label>   
+                                <input type="checkbox" class="vga" id="vga-UHD" value="UHD" onclick="changeColor(this);">
+                                <label for="vga-UHD">UHD</label>                          
+                            </div>                     
+                            <h3 for="sort-order">Sắp xếp theo thứ tự</h3>
+                            <select id="sort-order" name="sort-order">
+                                <option value="asc">Tăng dần</option>
+                                <option value="desc">Giảm dần</option>
+                            </select>                   
+                            <button type="button" onclick="filterAndShowProducts()">Tìm Kiếm</button>
+                        </form>
+                    </div>
                 </div>
                 <ul class="container-filter">
                     <li id="filterthuonghieu" class="title">
@@ -1048,9 +1206,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="mailto:8Lap@gmail.com" style="text-decoration: none;color: white;display: flex;">
-                            <img class="map" src="../imageDoAn/envelope.png">&nbsp; LapTopPro@gmail.com
-                        </a>
+                      
                     </div>
                     <div><img src="../imageDoAn/dathongbao_48067cd02fae41b68bf0294777c39c94_compact.png"></div>
                 </div>
@@ -1140,11 +1296,13 @@
     <script src="../js/listactive.js"></script> 
     <script src="../js/listdaquasudung.js"></script>
     <script src="../js/Locsanpham.js"></script>
-  <!--  <script src="./js/ListSearchProducts.js"></script>  -->
-  <script src="../js/ListFilterProducts.js"></script>   
+    <script src="../js/Timkiemnangcao.js"></script>  
+    <script src="../js/ListFilterProducts.js"></script>   
     <script src="../js/Phanloai.js"></script>
     <script src="../js/filterproducts.js"></script>f
     <script src="../js/testphantrang.js"></script>
+    <script src="../js/productInfomation2.js" ></script>
+    <script src="../js/Quanlydonhang.js"></script>
        <script>
         document.getElementById("dangxuat").style.display="none";
         document.getElementById("admin").style.display="none";
@@ -1243,7 +1401,194 @@ function login(event) {
   }
 }
 
+
     </script>
-    <script src="../js/script.js"></script>
+  
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var cart = localStorage.getItem('cart');
+    var cartItems = cart ? JSON.parse(cart) : [];
+
+    // Lấy danh sách sản phẩm từ localStorage.ArrayListProducts
+    var productsList = localStorage.getItem('ArrayListProducts');
+    var products = productsList ? JSON.parse(productsList) : [];
+
+    // Function để lấy thông tin sản phẩm từ localStorage.ArrayListProducts dựa trên ID
+    function getProductById(productId) {
+        return products.find(product => product.id === productId);
+    }
+    window.removeFromCart = function (index) {
+        cartItems.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+
+        updateCartView();
+    };
+
+    function updateCartView() {
+        var cartView = document.querySelector('.cart-scroll table tbody');
+        var totalView = document.getElementById('total-view-cart');
+        var total = 0;
+        var totalQuantity = 0;
+    
+        if (cartItems.length === 0) {
+            cartView.innerHTML = '<tr><td colspan="3" class="text-center"><img src="https://file.hstatic.net/200000525917/file/no-cart_c1e41f3edf5c45b18eb6c64306d881c8_small.png" width="60" height="60"><p>Hiện chưa có sản phẩm</p></td></tr>';
+            totalView.textContent = formatCurrency(total);
+            updateCartNumber(totalQuantity);
+            return;
+        }
+
+        // Hiển thị sản phẩm trong giỏ hàng
+        var cartContent = '';
+        cartItems.forEach(function(item, index) {
+            var selectedProduct = getProductById(item.id);
+
+            cartContent += `
+                <tr>
+                    <td><img src="${selectedProduct.img}" width="100" height="100"></td>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td>${item.quantity}</td>
+                    <td><button onclick="removeFromCart(${index})">X</button></td>
+                </tr>`;
+            
+            total += parseInt(item.price.replace(/[^\d]/g, '')) * item.quantity;
+            totalQuantity += item.quantity;
+        });
+
+        cartView.innerHTML = cartContent;
+        totalView.textContent = formatCurrency(total);
+        updateCartNumber(totalQuantity);
+    }
+    function updateCartNumber(quantity) {
+        var cartNumber = document.querySelector('.cartNumber');
+        cartNumber.textContent = quantity.toString();
+    }
+
+    // Hàm định dạng số tiền
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+    }
+    // Gọi hàm cập nhật thông tin giỏ hàng khi trang được load
+    updateCartView();
+});
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownContent");
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+        document.addEventListener('click', closeDropdownOutside);
+    } else {
+        dropdown.style.display = "none";
+        document.removeEventListener('click', closeDropdownOutside);
+    }
+}
+
+function closeDropdownOutside(event) {
+    var dropdown = document.getElementById("dropdownContent");
+    var button = document.querySelector(".cartButton");
+
+    if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+        dropdown.style.display = "none";
+        document.removeEventListener('click', closeDropdownOutside);
+    }
+}
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownContent");
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+        document.addEventListener('click', closeDropdownOutside);
+    } else {
+        dropdown.style.display = "none";
+        document.removeEventListener('click', closeDropdownOutside);
+    }
+}
+
+function closeDropdownOutside(event) {
+    var dropdown = document.getElementById("dropdownContent");
+    var button = document.querySelector(".cartButton");
+
+    if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+        dropdown.style.display = "none";
+        document.removeEventListener('click', closeDropdownOutside);
+    }
+}
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownContent");
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+        document.addEventListener('click', closeDropdownOutside);
+    } else {
+        dropdown.style.display = "none";
+        document.removeEventListener('click', closeDropdownOutside);
+    }
+}
+
+function closeDropdownOutside(event) {
+    var dropdown = document.getElementById("dropdownContent");
+    var button = document.querySelector(".cartButton");
+
+    if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+        dropdown.style.display = "none";
+        document.removeEventListener('click', closeDropdownOutside);
+    }
+}
+function toggleDropdown1() {
+    var popup = document.getElementById('popupContainer');
+    popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+
+    var dropdown = document.getElementById("dropdownContent");
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+        document.removeEventListener('click', closeDropdownOutside);
+    }
+}
+document.addEventListener('DOMContentLoaded', function () {
+    hiendondadat();
+});
+
+var logged=JSON.parse(localStorage.getItem("loginemail"));
+hiendondadat();
+
+function hiendondadat()
+{
+    
+    var bill=JSON.parse(localStorage.getItem('bill'));
+    
+    var qly = `     
+                                      
+                                        <tr>
+                                       
+
+
+                                            <th>Email</th>
+                                            <th>Xem chi tiet</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Ngày mua hàng</th>
+                                            <th>Tình trạng đơn hàng</th>
+                                           
+                                        </tr>
+                                    `;
+
+                for (let i = 0; i < bill.length; i++) {
+                    if(bill[i].email===logged.email)
+                    qly += `
+                    <tr>
+                     
+                                <td>${bill[i].email}</td>
+                                <td> <button onclick="xemchitiet(${bill[i].id})"> Chi tiết </button> </td>
+                                <td>${formatCurrency(bill[i].total)}</td>
+                                <td>${bill[i].date}</td>
+                                <td style="color :red; font-weight:bold">  ${bill[i].status} 
+                                </td>
+                            </tr>`;
+                }
+          
+  
+                document.getElementById("xembill").innerHTML = qly;
+           
+}
+
+
+    </script>
+      <script> src="../js/script.js"</script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+.container-timkiemnangcao{
+    width: 600px; 
+    background-color: aliceblue; 
+    display: none; 
+    position: absolute; 
+    z-index: 100;
+    padding: 10px;
+    border: 1px solid #ddd; /* Màu sắc và độ dày của viền */
+    border-radius: 5px; /* Mờ (border radius) */
+    cursor: pointer;
+}
+#button-boloc{
+    border: 1px solid #ddd;
+    width: 80px;
+    height: 40px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#advanced-search-form{
+    padding: 0px 20px;
+}
+
+/* CSS cho ô input giá thấp nhất và giá cao nhất */
+.container-textprice{
+    display: flex;
+    justify-content: space-between;
+}
+.container-textprice .gia {
+    width: 260px; /* Chiều dài */
+    height: 40px; /* Chiều rộng */
+    padding: 8px; /* Khoảng cách nội dung từ viền */
+    border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo rằng padding không làm tăng kích thước toàn bộ của phần tử */
+}
+.container-cpu-ssd{
+    display: flex;
+}
+/* CSS */   
+/* Ẩn ô checkbox mặc định */
+/* Ẩn input */
+input.thuonghieu, input.cpu, input.ssd, input.vga {
+    display: none;
+}
+
+/* Hiệu ứng chuyển động và màu sắc cho ô checkbox được chọn */
+input.thuonghieu:checked + label,
+input.cpu:checked + label, 
+input.ssd:checked + label,
+input.vga:checked + label {
+    border-color: #00f;
+    color: #00f;
+    font-weight: bold;
+}
+
+/* Hiệu ứng chuyển động và màu sắc khi rê chuột vào ô checkbox */
+input.thuonghieu + label:hover,
+input.cpu + label:hover, 
+input.ssd + label:hover,
+input.vga + label:hover {
+    border-color: #00f;
+    color: #00f;
+}
+
+
+/* Kiểu dáng mặc định cho label */
+label {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: border-color 0.3s, color 0.3s; /* Hiệu ứng chuyển động */
+    color: #000; /* Màu chữ mặc định */
+}
+/* CSS cho thanh kéo */
+#price-slider {
+    margin-top: 10px;
+}
+
+/* CSS cho input giá */
+#price-min,
+#price-max {
+    width: 260px;
+    display: inline-block;
+}
+/*CSS CHO Ô INPUT SẮP XÊP GIÁ*/
+#sort-order {
+    width: 180px;
+    height: 30px;
+    display: inline-block;
+}
+#advanced-search-form button{
+    width: 300px;
+    height: 40px;
+    margin-left: 75px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+#closeboloc:hover{
+    background-color: wheat;
+}

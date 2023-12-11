@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="../cssDoAn/listlaptop.css">
 <link rel="stylesheet" href="../cssDoAn/listncsd.css">
 <link rel="stylesheet" href="../cssDoAn/listdaquasudung.css">
-<title>abc</title>
+<title>Admin</title>
 
 </head>
 
@@ -49,7 +49,7 @@
 
         <div id="home-content" class="content-section"> 
             <div class="selling-products">
-                <div class="headerad">Danh mục sản phẩm       </div>
+                <div class="headerad">CHÀO MỪNG ADMIN      </div>
                 <div class="item-selling-products" id="item-selling-products">
                
 
@@ -84,8 +84,18 @@
                     <label for="dateend">Ngày kết thúc:</label>
                     <input type="date" id="dateend2">
                 </div>
-                    <button type="submit" style="margin-top: 10px; margin-left: 10px;" onclick="thongKeDoanhSoTrong1Tuan();"> Tìm kiếm </button>
-               
+                    <button type="submit" style="margin-top: 10px; margin-left: 10px;" onclick="thongKe();" > Tìm kiếm </button>
+                    <h2 id="tongdoanhso">  </h2>
+                    <table class="tabledoanhso" id="quanlydoanhso" cellpadding="50" cellspacing="100"> 
+                        
+                        <thead>
+                    <tr>
+                        <th>Hãng</th>
+                        <th>Số lượng bán</th>
+                        <th>Doanh số thu được</th>
+                    </tr>
+                    </thead>
+                    </table>
                 
             </form>        
         </div>
@@ -304,6 +314,43 @@
     <script src="../js/Quanlydonhang.js"></script>
    
 
+<script>
+    document.getElementById('frmdoanhso').addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    thongKe();
+});
 
+    quanlydonhang();
+function quanlydonhang()
+{
+    var bill=JSON.parse(localStorage.getItem('bill'));
+
+    var qlydonhang = ` <tr>
+    <th> ID </th>
+    <th>Email</th>
+    <th>Xem chi tiết</th>
+    <th>Tổng tiền</th>
+    <th>Ngày mua hàng</th>
+    <th>Tình trạng đơn hàng</th>
+   
+</tr>`;
+
+                for (let i = 0; i < bill.length; i++) {
+                    qlydonhang += `<tr>
+                                <td>${bill[i].id} </td>
+                                <td>${bill[i].email}</td>
+                                <td> <button onclick="xemchitiet(${bill[i].id})"> Chi tiết </button> </td>
+                                <td>${formatCurrency(bill[i].total)}</td>
+                                <td>${bill[i].date}</td>
+                                <td style="color :red; font-weight:bold">  ${bill[i].status} 
+                                <button type="submit" onclick= "daxuly(${bill[i].id})" style="margin-right: 10px " > Đã xử lý </button> 
+                                <button type="submit" onclick= "chuaxuly(${bill[i].id})" style="margin-right: 10px"> Chưa xử lý </button> 
+                                
+                                </td>
+                            </tr>`;
+                }
+                document.getElementById("quanlyhoadon").innerHTML = qlydonhang;
+}
+</script>
 </body>
 </html>
