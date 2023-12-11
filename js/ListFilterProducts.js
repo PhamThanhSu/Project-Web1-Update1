@@ -48,15 +48,15 @@ function ListSellingProductFilter(mangdaloc, filterthuonghieu = [], filtergiaban
             }
         }
  
-         if (filtercpu.length > 0 && !filtercpu.some(cpuValue => product.cpu.includes(cpuValue))) {
+         if (filtercpu.length > 0 && !filtercpu.some(cpuValue => cpu.includes(cpuValue))) {
              continue;
          }
  
-         if (filterssd.length > 0 && !filterssd.some(ssdValue => product.ssd.includes(ssdValue))) {
+         if (filterssd.length > 0 && !filterssd.some(ssdValue => ssd.includes(ssdValue))) {
              continue;
          }
  
-         if (filtervga.length > 0 && !filtervga.some(vgaValue => product.vga.includes(vgaValue))) {
+         if (filtervga.length > 0 && !filtervga.some(vgaValue => vga.includes(vgaValue))) {
              continue;
          }
          s+=`<div class="itemproduct" id = "itemproduct" data-product-id="${product.id}">

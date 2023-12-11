@@ -42,7 +42,7 @@
 /* CSS */   
 /* Ẩn ô checkbox mặc định */
 /* Ẩn input */
-input.thuonghieu, input.cpu, input.ssd, input.vga {
+#advanced-search-form input.thuonghieu, #advanced-search-form input.cpu, #advanced-search-form input.ssd, #advanced-search-form input.vga {
     display: none;
 }
 
